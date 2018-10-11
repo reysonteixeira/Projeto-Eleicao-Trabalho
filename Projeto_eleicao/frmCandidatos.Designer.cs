@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCandidatos));
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
             this.txtNomeAbreviado = new System.Windows.Forms.TextBox();
             this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
@@ -258,6 +259,7 @@
             this.Controls.Add(this.txtNomeAbreviado);
             this.Controls.Add(this.txtNomeCompleto);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmCandidatos";
             this.Text = "Urna Eletrônica - Cadastro de Candidatos";

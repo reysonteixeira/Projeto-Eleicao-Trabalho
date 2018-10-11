@@ -83,5 +83,12 @@ namespace Projeto_eleicao
         {
 
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

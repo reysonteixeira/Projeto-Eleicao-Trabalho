@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExclusaoEleicao));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEleicao = new System.Windows.Forms.DataGridView();
             this.tituloEleicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,14 +59,14 @@
             this.dgvEleicao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tituloEleicao,
             this.paisEleicao});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEleicao.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEleicao.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEleicao.Location = new System.Drawing.Point(35, 72);
             this.dgvEleicao.MultiSelect = false;
             this.dgvEleicao.Name = "dgvEleicao";
@@ -129,9 +130,10 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.dgvEleicao);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmExclusaoEleicao";
-            this.Text = "frmExclusaoEleicao";
+            this.Text = "Urna Eletrônica - Excluir Eleição";
             this.Shown += new System.EventHandler(this.frmExclusaoEleicao_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEleicao)).EndInit();
             this.ResumeLayout(false);

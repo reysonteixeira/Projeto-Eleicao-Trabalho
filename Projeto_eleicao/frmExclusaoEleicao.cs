@@ -51,6 +51,12 @@ namespace Projeto_eleicao
             {
                 frmGerencial.eleicao.removeLista(indice);
                 dgvEleicao.Rows.Clear();
+                MessageBox.Show("Eleição excluída!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma eleição selecionada!");
             }
         }
 

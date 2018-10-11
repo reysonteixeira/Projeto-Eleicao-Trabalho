@@ -112,18 +112,21 @@ namespace Projeto_eleicao
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            liberaCampos(true);
-            btnNovo.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnAlterar.Enabled = false;
-            btnSalvar.Enabled = true;
+        { 
             frmAlterarEleicao alterarEleicao = new frmAlterarEleicao();
             alterarEleicao.ShowDialog();
             cod = frmGerencial.eleicao.getCodEleicao();
-            restauraCampos();
-            preencheComboBox();
+            if(cod != -1)
+            {
+                restauraCampos();
+                liberaCampos(true);
+                btnNovo.Enabled = false;
+                btnExcluir.Enabled = false;
+                btnAlterar.Enabled = false;
+                btnSalvar.Enabled = true;
+            }
         }
+
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -163,17 +166,33 @@ namespace Projeto_eleicao
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            frmGerencial.eleicao.removeCandidatoLista(cbCandidatos.SelectedIndex);
-            preencheComboBox();
+            if (cbCandidatos.SelectedIndex >= 0)
+            {
+                frmGerencial.eleicao.removeCandidatoLista(cbCandidatos.SelectedIndex);
+                preencheComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma eleição selecionada!");
+            }
         }
+
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmGerencial.eleicao.setIndice(cbCandidatos.SelectedIndex);
-            frmCandidatos frmEdicaoCandidatos = new frmCandidatos();
-            frmEdicaoCandidatos.ShowDialog();
-            preencheComboBox();
+            if (cbCandidatos.SelectedIndex >= 0)
+            {
+                frmGerencial.eleicao.setIndice(cbCandidatos.SelectedIndex);
+                frmCandidatos frmEdicaoCandidatos = new frmCandidatos();
+                frmEdicaoCandidatos.ShowDialog();
+                preencheComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma eleição selecionada!");
+            }
         }
+
        
         private void cbCandidatos_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -184,6 +203,20 @@ namespace Projeto_eleicao
         {
             frmExclusaoEleicao frmExclusao = new frmExclusaoEleicao();
             frmExclusao.ShowDialog();
+        }
+
+        private void txtCodSeguranca_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodSeguranca_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtCodSeguranca.Text.Length<8)
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtCodSeguranca, "Senha pequena");
+            }
         }
     }
 }

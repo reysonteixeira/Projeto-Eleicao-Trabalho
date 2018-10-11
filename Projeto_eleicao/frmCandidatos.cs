@@ -63,7 +63,7 @@ namespace Projeto_eleicao
             txtNomeCompleto.Text = frmGerencial.eleicao.getNomeCompleto(frmGerencial.eleicao.getIndice());
             txtPartidoNome.Text = frmGerencial.eleicao.getNomePartido(frmGerencial.eleicao.getIndice());
             txtPartidoNum.Text = frmGerencial.eleicao.getNumPartido(frmGerencial.eleicao.getIndice()).ToString();
-          //  pbFoto.Load(frmGerencial.eleicao.getFoto(frmGerencial.eleicao.getIndice()));
+            pbFoto.Load(frmGerencial.eleicao.getFoto(frmGerencial.eleicao.getIndice()).ToString());
         }
        
     
@@ -142,7 +142,7 @@ namespace Projeto_eleicao
             {
                 //ATRIBUI A IMAGEM SELECIONADA AO CAMPO PICBOX
                 pbFoto.Load(openFileDialog1.FileName);
-              //  frmGerencial.cand.setFoto(openFileDialog1.FileName);
+                frmGerencial.eleicao.setFoto(openFileDialog1.FileName);
             }
         }
 
