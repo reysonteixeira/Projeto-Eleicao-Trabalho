@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlterarEleicao));
             this.dgvEleicao = new System.Windows.Forms.DataGridView();
             this.tituloEleicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paisEleicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +74,6 @@
             this.dgvEleicao.Size = new System.Drawing.Size(701, 251);
             this.dgvEleicao.TabIndex = 0;
             this.dgvEleicao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEleicao_CellClick);
-            this.dgvEleicao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEleicao_CellContentClick);
             // 
             // tituloEleicao
             // 
@@ -140,9 +138,8 @@
             this.Controls.Add(this.btnCancela);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.dgvEleicao);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAlterarEleicao";
-            this.Text = "Urna Eletrônica - Alterar Eleição";
+            this.Text = "frmAlterarEleicao";
             this.Shown += new System.EventHandler(this.frmAlterarEleicao_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEleicao)).EndInit();
             this.ResumeLayout(false);

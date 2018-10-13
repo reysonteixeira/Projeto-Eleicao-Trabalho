@@ -17,9 +17,13 @@ namespace Projeto_eleicao
             InitializeComponent();
         }
 
+        //####################################################   VARIÁVEIS   ##########################################################
 
-        int cod;
+        int cod;//ARMAZENARÁ O INDICE DA ELEIÇÃO QUE SERÁ EDITADA
   
+        //#######################################  MANIPULAÇÃO COM ELEMENTOS DO FORMULÁRIO  ##########################################
+
+        //----- LIMPA OS VALORES CONTIDOS NO FORMULÁRIO
         public void limpaCampos()
         {
             txtCodigo.Clear();
@@ -29,6 +33,7 @@ namespace Projeto_eleicao
             txtCodSeguranca.Clear();
         }
 
+        //----- HABILITA OU DESABILITA CAMPOS DO FORMULÁRIO PARA ENTRADA DE DADOS
         public void liberaCampos(bool valida)
         {
             txtCodSeguranca.Enabled = valida;
@@ -44,31 +49,49 @@ namespace Projeto_eleicao
             btnEditar.Enabled = valida;
         }
 
-        public void restauraCampos()
+        //----- RESTAURA VALORES DA LISTA DE ELEIÇÕES
+        public void restauraCampos()// BUSCA PELO ELEMENTO CONTIDO NA POSIÇÃO DA LISTA ENVIADO POR PARAMETRO
         {
-            txtCodigo.Text =frmGerencial.eleicao.getCodigo(cod).ToString();
-            txtTituloEleicao.Text = frmGerencial.eleicao.getTituloEleicao(cod);
-            dtpDataEleicao.Value = frmGerencial.eleicao.getDataEleicao(cod);
-            cbPaises.SelectedIndex = (int)frmGerencial.eleicao.getPais(cod);
-            txtCodSeguranca.Text = frmGerencial.eleicao.getCodigoSeguranca(cod);
-            frmGerencial.eleicao.setListaCandidato(cod);
+                txtCodigo.Text = frmGerencial.eleicao.getCodigo(cod).ToString();
+                txtTituloEleicao.Text = frmGerencial.eleicao.getTituloEleicao(cod);
+                dtpDataEleicao.Value = frmGerencial.eleicao.getDataEleicao(cod);
+                //---- TEMP CAST DO VALOR GUARDADO NO ENUM DE PAISES
+                cbPaises.SelectedIndex = (int)frmGerencial.eleicao.getPais(cod);
+                txtCodSeguranca.Text = frmGerencial.eleicao.getCodigoSeguranca(cod);
+                frmGerencial.eleicao.setListaCandidato(cod);
         }
 
-     
+        //----- FAZ O PREENCHIMENTO DO COMBOBOX DE CANDIDATOS COM OS NOMES DE CANDIDATOS JÁ CADASTRADOS
+        public void preencheComboBox()
+        {
+            //-- LIMPA OS VALORES JÁ PRESENTES NO COMBOBOX
+            cbCandidatos.Items.Clear();
+            //-- PERCORRE A LISTA DE CANDIDATOS
+            for (int i = 0; i < frmGerencial.eleicao.getTamListaCandidatos(); i++)
+            {
+                cbCandidatos.Items.Add(frmGerencial.eleicao.getNomeCompleto(i));//ADICIONA O ELEMENTO DA POSIÇÃO "I" NO COMBOBOX
+            }
+        }
+
+
+        //##########################################   ENVIO DE DADOS PARA A LISTA   ##################################################
+
+        //----- TRANSFERE OS VALORES DO FORMULÁRIO PARA SER SALVO
         public void enviaDados()
         {
-            frmGerencial.eleicao.setDataCadastro(DateTime.Today);
+            frmGerencial.eleicao.setDataCadastro(DateTime.Today);//PASSADO O DIA ATUAL COMO PARAMETRO
             frmGerencial.eleicao.setDataEleicao(dtpDataEleicao.Value);
             frmGerencial.eleicao.setTituloEleicao(txtTituloEleicao.Text);
             frmGerencial.eleicao.setCodigoEleicao(int.Parse(txtCodigo.Text));
             frmGerencial.eleicao.setPais(cbPaises.SelectedIndex);
             frmGerencial.eleicao.setCodigoSeguranca(txtCodSeguranca.Text);
-            frmGerencial.eleicao.setSituacaoEleicao(0);
+            frmGerencial.eleicao.setSituacaoEleicao(0);//SITUAÇÃO 0, MOSTRA QUE A ELEIÇÃO NÃO FOI INICIADA
         }
 
+        //----- FAZ A INSERÇÃO DOS VALORES NA LISTA
         public void salvarCadastro()
         {
-            if (frmGerencial.eleicao.getCodEleicao() == -1)
+            if (frmGerencial.eleicao.getCodEleicao() == -1)//-1 REPRESENTA QUE UM NOVO CADASTRO SERÁ INCLUSO
             {        
                 enviaDados();
                 frmGerencial.eleicao.insereLista();
@@ -76,29 +99,32 @@ namespace Projeto_eleicao
                 limpaCampos();
                 MessageBox.Show("Eleição cadastrada com sucesso!");
             }
-            else
+            else// O DADO SERÁ GUARDADO NA POSIÇÃO ENVIADO POR PARAMETRO, MOSTRA QUE O MESMO FAZ PARTE DE UMA EDIÇÃO
             { 
                 enviaDados();
                 frmGerencial.eleicao.insereLista(frmGerencial.eleicao.getCodEleicao());
-                
                 liberaCampos(false);
                 limpaCampos();
                 MessageBox.Show("Eleição alterada com sucesso!");
             }
         }
 
+
+        //############################################  MANIPULAÇÃO DE ELEIÇÕES  ######################################################
+
+        //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
-        {             
+        {
             btnSalvar.Enabled = false;
             btnCancelar.Enabled = false;
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
-            btnNovo.Enabled = true;           
+            btnNovo.Enabled = true;
             salvarCadastro();
             frmGerencial.eleicao.limpaLista();
         }
 
-
+        //--- BOTÃO NOVO
         private void btnNovo_Click(object sender, EventArgs e)
         {
             liberaCampos(true);
@@ -111,29 +137,35 @@ namespace Projeto_eleicao
             btnEditar.Enabled = true;
         }
 
+        //--- BOTÃO ALTERAR
         private void btnAlterar_Click(object sender, EventArgs e)
         { 
             frmAlterarEleicao alterarEleicao = new frmAlterarEleicao();
             alterarEleicao.ShowDialog();
-            cod = frmGerencial.eleicao.getCodEleicao();
-            if(cod != -1)
+            if (frmGerencial.eleicao.getCodEleicao() >= 0)
             {
-                restauraCampos();
+                cod = frmGerencial.eleicao.getCodEleicao();//COD RECEBE O VALOR DO INDICE APÓS SELEÇÃO DE ELEIÇÃO, SENDO QUE SERÁ UTILIZADO COMO MARCADOR DE POSIÇÃO DE EDIÇÃO
+                                                           //-- RESTAURA TODOS VALORES PARA EDIÇÃO
                 liberaCampos(true);
                 btnNovo.Enabled = false;
                 btnExcluir.Enabled = false;
                 btnAlterar.Enabled = false;
                 btnSalvar.Enabled = true;
+                restauraCampos();
+                preencheComboBox();
             }
         }
 
-
+        //--- BOTÃO SAIR
         private void btnSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //-- INSTANCIA LISTA DE MODO QUE ZERA CANDIDATOS DA LISTA DE CANDIDATOS
+            frmGerencial.eleicao.limpaLista();
+            this.Close();//ENCERRA A JANELA ATUAL
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        //--- BOTÃO CANCELAR
+        private void btnCancelar_Click(object sender, EventArgs e)//LIMPA TODOS CAMPO E OS DESABILITA
         {
             limpaCampos();
             liberaCampos(false);
@@ -143,79 +175,60 @@ namespace Projeto_eleicao
             btnSalvar.Enabled = false;
         }
 
-        private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            frmGerencial.eleicao.setIndice(-1);
-            frmCandidatos Candidatos = new frmCandidatos();
-            Candidatos.ShowDialog();
-            preencheComboBox();
-        }
-
-        public void preencheComboBox()
-        {
-            cbCandidatos.Items.Clear();
-           
-                for(int i=0;i<frmGerencial.eleicao.getTamListaCandidatos();i++)
-                {
-                    cbCandidatos.Items.Add(frmGerencial.eleicao.getNomeCompleto(i));
-                }
-          
-            
-        }
-
-
-        private void btnRemover_Click(object sender, EventArgs e)
-        {
-            if (cbCandidatos.SelectedIndex >= 0)
-            {
-                frmGerencial.eleicao.removeCandidatoLista(cbCandidatos.SelectedIndex);
-                preencheComboBox();
-            }
-            else
-            {
-                MessageBox.Show("Nenhuma eleição selecionada!");
-            }
-        }
-
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (cbCandidatos.SelectedIndex >= 0)
-            {
-                frmGerencial.eleicao.setIndice(cbCandidatos.SelectedIndex);
-                frmCandidatos frmEdicaoCandidatos = new frmCandidatos();
-                frmEdicaoCandidatos.ShowDialog();
-                preencheComboBox();
-            }
-            else
-            {
-                MessageBox.Show("Nenhuma eleição selecionada!");
-            }
-        }
-
-       
-        private void cbCandidatos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //--- BOTÃO EXCLUIR
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            //-- ABRE O FORMULÁRIO PARA EXCLUSÃO DE ELEIÇÃO
             frmExclusaoEleicao frmExclusao = new frmExclusaoEleicao();
             frmExclusao.ShowDialog();
         }
 
-        private void txtCodSeguranca_Validated(object sender, EventArgs e)
-        {
 
+        //#############################################  MANIPULAÇÃO CANDIDATOS  ######################################################
+
+        //--- BOTÃO ADICIONAR
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            frmGerencial.eleicao.setIndice(-1);
+            //-- ABRE O FORMULÁRIO PARA ADIÇÃO DE NOVO CANDIDATO
+            frmCandidatos Candidatos = new frmCandidatos();
+            Candidatos.ShowDialog();
+            //-- FAZ INSERÇÃO DO NOVO CADASTRO DE CANDIDATO NO COMBOBOX DE CANDIDATOS
+            preencheComboBox();
         }
 
-        private void txtCodSeguranca_Validating(object sender, CancelEventArgs e)
+        //--- BOTÃO REMOVER
+        private void btnRemover_Click(object sender, EventArgs e)
         {
-            if (txtCodSeguranca.Text.Length<8)
+            if (cbCandidatos.SelectedIndex >= 0)
             {
-                e.Cancel = false;
-                errorProvider.SetError(txtCodSeguranca, "Senha pequena");
+                //-- REMOVE O ELEMENTO CORRESPONDENTE A ESCOLHA EM COMBOBOX
+                frmGerencial.eleicao.removeCandidatoLista(cbCandidatos.SelectedIndex);
+                //-- ATUALIZA A COMBOBOX DE CANDIDATOS APÓS A EXCLUSÃO DO CANDIDATO
+                preencheComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Não existe nenhum candidato selecionado!");
+            }
+        }
+
+        //--- BOTÃO EDITAR
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //-- PASSA O INDICE DO CANDIDATO A SER ALTERADO
+            frmGerencial.eleicao.setIndice(cbCandidatos.SelectedIndex);
+            //-- FORMULÁRIO DE CANDIDATOS É ABERTO COM INTUITO DE EDIÇÃO
+            if (frmGerencial.eleicao.getIndice() >= 0)
+            {
+                frmCandidatos frmEdicaoCandidatos = new frmCandidatos();
+                frmEdicaoCandidatos.ShowDialog();
+                //-- ATUALIZAÇÃO DO COMBOBOX APÓS A EDIÇÃO DOS DADOS DO CANDIDATO
+                preencheComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Não existe nenhum candidato selecionado!");
             }
         }
     }

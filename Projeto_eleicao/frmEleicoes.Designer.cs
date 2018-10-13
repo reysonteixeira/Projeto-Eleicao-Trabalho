@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEleicoes));
             this.cbPaises = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDataEleicao = new System.Windows.Forms.DateTimePicker();
@@ -53,9 +51,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // cbPaises
@@ -221,7 +217,6 @@
             this.cbCandidatos.Name = "cbCandidatos";
             this.cbCandidatos.Size = new System.Drawing.Size(341, 28);
             this.cbCandidatos.TabIndex = 2;
-            this.cbCandidatos.SelectedIndexChanged += new System.EventHandler(this.cbCandidatos_SelectedIndexChanged);
             // 
             // txtCodigo
             // 
@@ -238,7 +233,6 @@
             this.txtCodSeguranca.Name = "txtCodSeguranca";
             this.txtCodSeguranca.Size = new System.Drawing.Size(165, 26);
             this.txtCodSeguranca.TabIndex = 50;
-            this.txtCodSeguranca.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodSeguranca_Validating);
             // 
             // label5
             // 
@@ -304,7 +298,6 @@
             // 
             // btnNovo
             // 
-            this.btnNovo.CausesValidation = false;
             this.btnNovo.Image = global::Projeto_eleicao.Properties.Resources.add;
             this.btnNovo.Location = new System.Drawing.Point(315, 25);
             this.btnNovo.Name = "btnNovo";
@@ -330,10 +323,6 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // frmEleicoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -357,13 +346,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTituloEleicao);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEleicoes";
             this.Text = "Urna Eletrônica - Cadastro de Eleições";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,6 +381,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

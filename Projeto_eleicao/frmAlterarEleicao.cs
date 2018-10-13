@@ -68,10 +68,5 @@ namespace Projeto_eleicao
         {
 
         }
-
-        private void dgvEleicao_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

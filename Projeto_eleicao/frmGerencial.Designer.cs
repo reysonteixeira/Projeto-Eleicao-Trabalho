@@ -31,10 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerencial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCadastroCandidatos = new System.Windows.Forms.ToolStripMenuItem();
+            this.eleiçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarEleiçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encerrarEleiçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEncerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -44,8 +47,6 @@
             this.btnDocumentação = new System.Windows.Forms.Button();
             this.btnSobre = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.documentaçãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +59,7 @@
             this.encerrarEleiçãoToolStripMenuItem,
             this.resultadosToolStripMenuItem,
             this.documentaçãoToolStripMenuItem,
+            this.sobreToolStripMenuItem,
             this.tsmEncerrar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -67,10 +69,25 @@
             // 
             // cadastrarToolStripMenuItem
             // 
+            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmCadastroCandidatos,
+            this.eleiçãoToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
-            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
+            // 
+            // tsmCadastroCandidatos
+            // 
+            this.tsmCadastroCandidatos.Name = "tsmCadastroCandidatos";
+            this.tsmCadastroCandidatos.Size = new System.Drawing.Size(134, 22);
+            this.tsmCadastroCandidatos.Text = "Candidatos";
+            this.tsmCadastroCandidatos.Click += new System.EventHandler(this.tsmCadastroCandidatos_Click);
+            // 
+            // eleiçãoToolStripMenuItem
+            // 
+            this.eleiçãoToolStripMenuItem.Name = "eleiçãoToolStripMenuItem";
+            this.eleiçãoToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.eleiçãoToolStripMenuItem.Text = "Eleição";
             // 
             // iniciarEleiçãoToolStripMenuItem
             // 
@@ -92,18 +109,21 @@
             // 
             // documentaçãoToolStripMenuItem
             // 
-            this.documentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.documentaçãoToolStripMenuItem1,
-            this.sobreToolStripMenuItem1});
             this.documentaçãoToolStripMenuItem.Name = "documentaçãoToolStripMenuItem";
-            this.documentaçãoToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.documentaçãoToolStripMenuItem.Text = "Ajuda";
+            this.documentaçãoToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.documentaçãoToolStripMenuItem.Text = "Documentação";
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Text = "Sobre";
             // 
             // tsmEncerrar
             // 
             this.tsmEncerrar.Name = "tsmEncerrar";
-            this.tsmEncerrar.Size = new System.Drawing.Size(38, 20);
-            this.tsmEncerrar.Text = "Sair";
+            this.tsmEncerrar.Size = new System.Drawing.Size(62, 20);
+            this.tsmEncerrar.Text = "Encerrar";
             this.tsmEncerrar.Click += new System.EventHandler(this.tsmEncerrar_Click);
             // 
             // pictureBox1
@@ -214,18 +234,6 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // documentaçãoToolStripMenuItem1
-            // 
-            this.documentaçãoToolStripMenuItem1.Name = "documentaçãoToolStripMenuItem1";
-            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.documentaçãoToolStripMenuItem1.Text = "Documentação";
-            // 
-            // sobreToolStripMenuItem1
-            // 
-            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.sobreToolStripMenuItem1.Text = "Sobre";
-            // 
             // frmGerencial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,9 +279,10 @@
         private System.Windows.Forms.ToolStripMenuItem encerrarEleiçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resultadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem documentaçãoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmEncerrar;
         public System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.ToolStripMenuItem documentaçãoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmCadastroCandidatos;
+        private System.Windows.Forms.ToolStripMenuItem eleiçãoToolStripMenuItem;
     }
 }
