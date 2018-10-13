@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEleicoes));
             this.cbPaises = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpDataEleicao = new System.Windows.Forms.DateTimePicker();
@@ -346,6 +347,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTituloEleicao);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmEleicoes";
             this.Text = "Urna Eletrônica - Cadastro de Eleições";

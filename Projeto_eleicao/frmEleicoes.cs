@@ -145,7 +145,7 @@ namespace Projeto_eleicao
             if (frmGerencial.eleicao.getCodEleicao() >= 0)
             {
                 cod = frmGerencial.eleicao.getCodEleicao();//COD RECEBE O VALOR DO INDICE APÓS SELEÇÃO DE ELEIÇÃO, SENDO QUE SERÁ UTILIZADO COMO MARCADOR DE POSIÇÃO DE EDIÇÃO
-                                                           //-- RESTAURA TODOS VALORES PARA EDIÇÃO
+                //-- RESTAURA TODOS VALORES PARA EDIÇÃO
                 liberaCampos(true);
                 btnNovo.Enabled = false;
                 btnExcluir.Enabled = false;
