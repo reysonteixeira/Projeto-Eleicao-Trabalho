@@ -12,38 +12,60 @@ namespace Projeto_eleicao
 {
     public partial class frmAlterarEleicao : Form
     {
+        //##########################################  MÉTODOS AO CARREGAMENTO DE FORMULÁRIO  ###########################################
+
+        //----- MÉTODO CONSTRUTOR
         public frmAlterarEleicao()
         {
             InitializeComponent();
         }
-        int tamanho;
-        int indice = -1;
-
+       
+        //----- AO MOSTRAR O FORMULÁRIO
         private void frmAlterarEleicao_Shown(object sender, EventArgs e)
         {
-            tamanho = frmGerencial.eleicao.getTamanhoEleicao();
-            if (tamanho > 0)
+            tamanho = frmGerencial.eleicao.getTamanhoEleicao();//BUSCA A QUANTIDADE DE ELEIÇÕES CADASTRADAS
+            if (tamanho > 0)//CASO EXISTA ALGUMA ELEIÇÃO
             {
                 for (int i = 0; i < tamanho; i++)
                 {
-                    string nomeEleicao = frmGerencial.eleicao.getTituloEleicao(i);
-                    string pais = frmGerencial.eleicao.getPais(i).ToString();
-                    dgvEleicao.Rows.Add(nomeEleicao, pais);
+                    string nomeEleicao = frmGerencial.eleicao.getTituloEleicao(i);//BUSCA O TÍTULO DA ELEIÇÃO CADASTRADA
+                    string pais = frmGerencial.eleicao.getPais(i).ToString();//BUSCA O PAÍS DA ELEIÇÃO
+                    dgvEleicao.Rows.Add(nomeEleicao, pais);//ADICIONA O TÍTULO E O PAÍS DA ELEIÇÃO NO DATA GRID VIEW
                 }
             }
         }
 
-        private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            //SE O ÍNDICE REPRESENTAR UMA POSIÇÃO DE ELEMENTO SELECIONADO DO DATA GRID VIEW
-            if (indice >= 0)
-            {
-                //O CÓDIGO QUE GERENCIA SE O CADASTRO É DE UM NOVO CANDIDATO OU DE UM NOVO CADASTRO RECEBE O 
-                //A POSIÇÃO NA LISTA QUE DEVERÁ SER ALTERADO
-                frmGerencial.eleicao.setCodEleicao(indice);
 
-                //FECHA A JANELA
-                Close();
+        //#################################################  VARIÁVEIS  ################################################################
+
+        int tamanho;//RECEBRÁ A QUANTIDADE DE ELEIÇÕES CADASTRADAS
+        int indice = -1;//MARCARÁ O CANDIDATO QUE SERÁ EDITADO
+
+
+        //#########################################  MANIPULAÇÃO DE EDIÇÕES  ###########################################################
+
+        //----- CLICAR EM CÉLULA DO DATA GRID VIEW
+        private void dgvEleicao_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (frmGerencial.eleicao.getSituacaoEleicao(dgvEleicao.CurrentRow.Index) == 0)
+            {
+                indice = dgvEleicao.CurrentRow.Index;//INDICE RECEBE O INDEX DA LINHA SELECIONADA ATUAL
+                dgvEleicao.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;//MUDA A COR DO BACKGROUND DA CÉLULA SELECIONADA
+                dgvEleicao.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;//MUDA A COR DA FONTE DA CÉLULA SELECIONADA
+            }
+            else
+            {
+                MessageBox.Show("Esta eleição já foi iniciada. Impossível fazer alteração!");
+            }
+        }
+
+        //----- BOTÃO ALTERAR
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {          
+            if (indice >= 0)//VERIFICA SE ALGUM CANDIDATO FOI SELECIONADO
+            {
+                frmGerencial.eleicao.setCodEleicao(indice);//ENVIA O CÓDIDO DA ELEIÇÃO QUE SERÁ EDITADA
+                this.Close();//FECHA A JANELA
             }
             else
             {
@@ -51,22 +73,11 @@ namespace Projeto_eleicao
             }
         }
 
-        private void dgvEleicao_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indice = dgvEleicao.CurrentRow.Index;
-            dgvEleicao.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
-            dgvEleicao.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-        }
-
+        //----- BOTÃO CANCELAR
         private void btnCancela_Click(object sender, EventArgs e)
         {
-            frmGerencial.eleicao.setCodEleicao(-1);
-            this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            frmGerencial.eleicao.setCodEleicao(-1);//VOLTA O CÓDIGO DA ELEIÇÃO PARA "-1", REPRESENTANDO QUE NÃO HAVERÁ CANDIDATO EDITADO
+            this.Close();//FECHA A JANELA
         }
     }
 }

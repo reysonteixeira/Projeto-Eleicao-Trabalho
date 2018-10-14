@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVotacao));
+            this.pbCandidato = new System.Windows.Forms.PictureBox();
             this.lblCandidato = new System.Windows.Forms.Label();
             this.txtVoto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,25 +45,28 @@
             this.btn0 = new System.Windows.Forms.Button();
             this.btnBranco = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblConfirma = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblPartido = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCandidato)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbCandidato
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(49, 68);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(339, 393);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbCandidato.InitialImage = global::Projeto_eleicao.Properties.Resources.add;
+            this.pbCandidato.Location = new System.Drawing.Point(49, 28);
+            this.pbCandidato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbCandidato.Name = "pbCandidato";
+            this.pbCandidato.Size = new System.Drawing.Size(339, 396);
+            this.pbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCandidato.TabIndex = 0;
+            this.pbCandidato.TabStop = false;
             // 
             // lblCandidato
             // 
             this.lblCandidato.AutoSize = true;
             this.lblCandidato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCandidato.Location = new System.Drawing.Point(139, 469);
+            this.lblCandidato.Location = new System.Drawing.Point(130, 432);
             this.lblCandidato.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCandidato.Name = "lblCandidato";
             this.lblCandidato.Size = new System.Drawing.Size(85, 29);
@@ -82,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 476);
+            this.label2.Location = new System.Drawing.Point(46, 439);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
@@ -200,6 +204,7 @@
             this.btnBranco.TabIndex = 23;
             this.btnBranco.Text = "BRANCO";
             this.btnBranco.UseVisualStyleBackColor = false;
+            this.btnBranco.Click += new System.EventHandler(this.btnBranco_Click);
             // 
             // label3
             // 
@@ -211,22 +216,46 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "Insira seu voto e clique ENTER";
             // 
-            // label1
+            // lblConfirma
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 521);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(470, 20);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "TECLE \'S\' PARA CONFIMAR O VOTO OU \'N\' PARA CANCELAR";
-            this.label1.Visible = false;
+            this.lblConfirma.AutoSize = true;
+            this.lblConfirma.Location = new System.Drawing.Point(181, 521);
+            this.lblConfirma.Name = "lblConfirma";
+            this.lblConfirma.Size = new System.Drawing.Size(470, 20);
+            this.lblConfirma.TabIndex = 25;
+            this.lblConfirma.Text = "TECLE \'S\' PARA CONFIMAR O VOTO OU \'N\' PARA CANCELAR";
+            this.lblConfirma.Visible = false;
             // 
-            // Form1
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 472);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 20);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Partido:";
+            // 
+            // lblPartido
+            // 
+            this.lblPartido.AutoSize = true;
+            this.lblPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPartido.Location = new System.Drawing.Point(117, 469);
+            this.lblPartido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPartido.Name = "lblPartido";
+            this.lblPartido.Size = new System.Drawing.Size(66, 24);
+            this.lblPartido.TabIndex = 27;
+            this.lblPartido.Text = "label1";
+            this.lblPartido.Visible = false;
+            // 
+            // frmVotacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPartido);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblConfirma);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBranco);
             this.Controls.Add(this.btn0);
@@ -242,12 +271,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtVoto);
             this.Controls.Add(this.lblCandidato);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCandidato);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Name = "frmVotacao";
+            this.Text = "Urna Eletrônica - Votação";
+            ((System.ComponentModel.ISupportInitialize)(this.pbCandidato)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,7 +285,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCandidato;
         private System.Windows.Forms.Label lblCandidato;
         private System.Windows.Forms.TextBox txtVoto;
         private System.Windows.Forms.Label label2;
@@ -271,6 +301,8 @@
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnBranco;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblConfirma;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPartido;
     }
 }

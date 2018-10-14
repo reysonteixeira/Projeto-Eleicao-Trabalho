@@ -127,6 +127,7 @@ namespace Projeto_eleicao
         //--- BOTÃO NOVO
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            frmGerencial.eleicao.instanciaVotos();
             liberaCampos(true);
             frmGerencial.eleicao.setCodEleicao(-1);
             cbCandidatos.Items.Clear();
@@ -173,6 +174,8 @@ namespace Projeto_eleicao
             btnAlterar.Enabled = true;
             btnExcluir.Enabled = true;
             btnSalvar.Enabled = false;
+            //-- INSTANCIA LISTA DE MODO QUE ZERA CANDIDATOS DA LISTA DE CANDIDATOS
+            frmGerencial.eleicao.limpaLista();
         }
 
         //--- BOTÃO EXCLUIR

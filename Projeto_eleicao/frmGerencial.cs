@@ -29,16 +29,14 @@ namespace Projeto_eleicao
 
         private void btnSobre_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show(frmGerencial.cand.getFoto(0));
+           
         }
 
       
 
         private void btnDocumentação_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(frmGerencial.eleicao.getNomeCompleto());
-            //MessageBox.Show(frmGerencial.candidato.getEleicao(0) + " - " + frmGerencial.candidato.getNomeCompleto(0).ToString()); 
-            //MessageBox.Show(frmGerencial.cand.getNomeCompleto(0) + " - " + frmGerencial.cand.getEleicao(0).ToString());
+           
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -49,7 +47,7 @@ namespace Projeto_eleicao
 
         private void btnResultados_Click(object sender, EventArgs e)
         {
-           MessageBox.Show(frmGerencial.eleicao.Tamanhoeleicao().ToString());
+          
         }
 
         private void tsmCadastroCandidatos_Click(object sender, EventArgs e)

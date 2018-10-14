@@ -109,6 +109,7 @@
             this.btnContinuar.Text = "Votação";
             this.btnContinuar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // btnIniciar
             // 

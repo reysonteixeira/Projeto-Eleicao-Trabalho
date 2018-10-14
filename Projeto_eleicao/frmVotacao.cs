@@ -21,5 +21,30 @@ namespace Projeto_eleicao
         {
             txtVoto.Text += '1';
         }
+
+        private void btnBranco_Click(object sender, EventArgs e)
+        {
+            buscaCandidato();
+        }
+
+
+        public void buscaCandidato()
+        {
+            frmGerencial.eleicao.restauraEleicao(frmGerencial.eleicao.getCodEleicao());
+            for (int i = 0; i < frmGerencial.eleicao.getTamListaCandidatos(); i++)
+            {
+                if (int.Parse(txtVoto.Text) == frmGerencial.eleicao.getNumPartido(i))
+                {
+                    MessageBox.Show(frmGerencial.eleicao.getFoto(i));
+                    lblCandidato.Visible = true;
+                    lblCandidato.Text = frmGerencial.eleicao.getNomeCompleto(i);
+                    lblPartido.Visible = true;
+                    lblPartido.Text = frmGerencial.eleicao.getNomePartido(i);
+                    pbCandidato.Load(frmGerencial.eleicao.getFoto(i));
+                    lblConfirma.Visible = true;
+                }
+            }
+        }
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEncerrar));
             this.cbEleicoes = new System.Windows.Forms.ComboBox();
             this.btnEncerrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.btnEncerrar.TabIndex = 1;
             this.btnEncerrar.Text = "Encerrar";
             this.btnEncerrar.UseVisualStyleBackColor = false;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
             // 
             // label1
             // 
@@ -73,8 +75,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEncerrar);
             this.Controls.Add(this.cbEleicoes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEncerrar";
             this.Text = "Urna Eletrônica - Encerrar Eleição";
+            this.Shown += new System.EventHandler(this.frmEncerrar_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
