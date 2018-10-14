@@ -293,6 +293,16 @@ namespace Projeto_eleicao.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap perfil_macho_utilizador_sombra_318_40244 {
+            get {
+                object obj = ResourceManager.GetObject("perfil-macho-utilizador-sombra_318-40244", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap personal_password {
             get {
                 object obj = ResourceManager.GetObject("personal-password", resourceCulture);

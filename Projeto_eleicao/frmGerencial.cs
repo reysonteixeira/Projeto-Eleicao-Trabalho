@@ -36,7 +36,7 @@ namespace Projeto_eleicao
 
         private void btnDocumentação_Click(object sender, EventArgs e)
         {
-           
+            MessageBox.Show(frmGerencial.eleicao.getVotos().ToString());
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVotacao));
-            this.pbCandidato = new System.Windows.Forms.PictureBox();
             this.lblCandidato = new System.Windows.Forms.Label();
             this.txtVoto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,19 +47,9 @@
             this.lblConfirma = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblPartido = new System.Windows.Forms.Label();
+            this.pbCandidato = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCandidato)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbCandidato
-            // 
-            this.pbCandidato.InitialImage = global::Projeto_eleicao.Properties.Resources.add;
-            this.pbCandidato.Location = new System.Drawing.Point(49, 28);
-            this.pbCandidato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pbCandidato.Name = "pbCandidato";
-            this.pbCandidato.Size = new System.Drawing.Size(339, 396);
-            this.pbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCandidato.TabIndex = 0;
-            this.pbCandidato.TabStop = false;
             // 
             // lblCandidato
             // 
@@ -247,6 +236,18 @@
             this.lblPartido.TabIndex = 27;
             this.lblPartido.Text = "label1";
             this.lblPartido.Visible = false;
+            // 
+            // pbCandidato
+            // 
+            this.pbCandidato.Image = global::Projeto_eleicao.Properties.Resources.perfil_macho_utilizador_sombra_318_40244;
+            this.pbCandidato.InitialImage = global::Projeto_eleicao.Properties.Resources.perfil_macho_utilizador_sombra_318_40244;
+            this.pbCandidato.Location = new System.Drawing.Point(50, 28);
+            this.pbCandidato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbCandidato.Name = "pbCandidato";
+            this.pbCandidato.Size = new System.Drawing.Size(339, 396);
+            this.pbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCandidato.TabIndex = 0;
+            this.pbCandidato.TabStop = false;
             // 
             // frmVotacao
             // 

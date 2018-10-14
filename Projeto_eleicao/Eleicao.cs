@@ -237,6 +237,7 @@ namespace Projeto_eleicao
             eleicoes.votos.Add(i);
         }
 
-      
+        public int getVotos() => listaEleicoes[0].votos[0];
+
     }
 }
