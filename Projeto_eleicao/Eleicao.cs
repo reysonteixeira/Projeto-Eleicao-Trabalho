@@ -237,7 +237,9 @@ namespace Projeto_eleicao
             eleicoes.votos.Add(i);
         }
 
-        public int getVotos() => listaEleicoes[0].votos[0];
+        public int getVotos(int i) => eleicoes.votos[i];
 
+        public int getQuantiVotos() => eleicoes.votos.Count;
+        
     }
 }

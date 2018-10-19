@@ -36,7 +36,7 @@ namespace Projeto_eleicao
 
         private void btnDocumentação_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(frmGerencial.eleicao.getVotos().ToString());
+            
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
@@ -47,7 +47,8 @@ namespace Projeto_eleicao
 
         private void btnResultados_Click(object sender, EventArgs e)
         {
-          
+            frmResultadoEleicao frmResultado = new frmResultadoEleicao();
+            frmResultado.ShowDialog();
         }
 
         private void tsmCadastroCandidatos_Click(object sender, EventArgs e)

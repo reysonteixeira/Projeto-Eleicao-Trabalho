@@ -138,8 +138,11 @@
             this.Controls.Add(this.btnCancela);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.dgvEleicao);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmAlterarEleicao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Urna Eletrônica - Alteração de Eleição";
             this.Shown += new System.EventHandler(this.frmAlterarEleicao_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEleicao)).EndInit();

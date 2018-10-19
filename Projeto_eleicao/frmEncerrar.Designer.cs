@@ -75,8 +75,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEncerrar);
             this.Controls.Add(this.cbEleicoes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmEncerrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Urna Eletrônica - Encerrar Eleição";
             this.Shown += new System.EventHandler(this.frmEncerrar_Shown);
             this.ResumeLayout(false);

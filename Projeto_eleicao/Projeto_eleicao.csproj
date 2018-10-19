@@ -73,6 +73,18 @@
     <Compile Include="frmExclusaoEleicao.Designer.cs">
       <DependentUpon>frmExclusaoEleicao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmResultadoEleicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmResultadoEleicao.Designer.cs">
+      <DependentUpon>frmResultadoEleicao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTempo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTempo.Designer.cs">
+      <DependentUpon>frmTempo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVotacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmExclusaoEleicao.resx">
       <DependentUpon>frmExclusaoEleicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmResultadoEleicao.resx">
+      <DependentUpon>frmResultadoEleicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTempo.resx">
+      <DependentUpon>frmTempo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVotacao.resx">
       <DependentUpon>frmVotacao.cs</DependentUpon>
@@ -286,6 +304,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\perfil-macho-utilizador-sombra_318-40244.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_find1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

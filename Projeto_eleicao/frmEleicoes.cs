@@ -127,6 +127,7 @@ namespace Projeto_eleicao
         //--- BOTÃO NOVO
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            frmGerencial.eleicao.limpaLista();
             frmGerencial.eleicao.instanciaVotos();
             liberaCampos(true);
             frmGerencial.eleicao.setCodEleicao(-1);
