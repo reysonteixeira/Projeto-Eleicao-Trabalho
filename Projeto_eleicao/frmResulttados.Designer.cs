@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResulttados));
             this.lbVotacao = new System.Windows.Forms.ListBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pbDescricao = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,14 @@
             this.lbl1Cand2Turno = new System.Windows.Forms.Label();
             this.lbl2Cand2Turno = new System.Windows.Forms.Label();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotalEleitores = new System.Windows.Forms.Label();
+            this.lblVotosValidos = new System.Windows.Forms.Label();
+            this.lblBrancos = new System.Windows.Forms.Label();
+            this.lblNulos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb2Turno1)).BeginInit();
@@ -193,6 +202,7 @@
             this.pb2Turno2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pb2Turno2.Name = "pb2Turno2";
             this.pb2Turno2.Size = new System.Drawing.Size(229, 298);
+            this.pb2Turno2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb2Turno2.TabIndex = 18;
             this.pb2Turno2.TabStop = false;
             // 
@@ -202,6 +212,7 @@
             this.pb1Turno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pb1Turno.Name = "pb1Turno";
             this.pb1Turno.Size = new System.Drawing.Size(229, 298);
+            this.pb1Turno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb1Turno.TabIndex = 19;
             this.pb1Turno.TabStop = false;
             // 
@@ -281,11 +292,95 @@
             this.lblResultado.TabIndex = 27;
             this.lblResultado.Text = "label12";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(851, 528);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(178, 24);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Total de eleitores:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(889, 558);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 24);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Votos válidos:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(879, 587);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 24);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Votos brancos:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(903, 616);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(126, 24);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Votos nulos:";
+            // 
+            // lblTotalEleitores
+            // 
+            this.lblTotalEleitores.AutoSize = true;
+            this.lblTotalEleitores.Location = new System.Drawing.Point(1035, 532);
+            this.lblTotalEleitores.Name = "lblTotalEleitores";
+            this.lblTotalEleitores.Size = new System.Drawing.Size(60, 20);
+            this.lblTotalEleitores.TabIndex = 32;
+            this.lblTotalEleitores.Text = "label12";
+            // 
+            // lblVotosValidos
+            // 
+            this.lblVotosValidos.AutoSize = true;
+            this.lblVotosValidos.Location = new System.Drawing.Point(1035, 561);
+            this.lblVotosValidos.Name = "lblVotosValidos";
+            this.lblVotosValidos.Size = new System.Drawing.Size(60, 20);
+            this.lblVotosValidos.TabIndex = 33;
+            this.lblVotosValidos.Text = "label13";
+            // 
+            // lblBrancos
+            // 
+            this.lblBrancos.AutoSize = true;
+            this.lblBrancos.Location = new System.Drawing.Point(1035, 590);
+            this.lblBrancos.Name = "lblBrancos";
+            this.lblBrancos.Size = new System.Drawing.Size(60, 20);
+            this.lblBrancos.TabIndex = 34;
+            this.lblBrancos.Text = "label14";
+            // 
+            // lblNulos
+            // 
+            this.lblNulos.AutoSize = true;
+            this.lblNulos.Location = new System.Drawing.Point(1035, 619);
+            this.lblNulos.Name = "lblNulos";
+            this.lblNulos.Size = new System.Drawing.Size(60, 20);
+            this.lblNulos.TabIndex = 35;
+            this.lblNulos.Text = "label15";
+            // 
             // frmResulttados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 729);
+            this.Controls.Add(this.lblNulos);
+            this.Controls.Add(this.lblBrancos);
+            this.Controls.Add(this.lblVotosValidos);
+            this.Controls.Add(this.lblTotalEleitores);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.lbl2Cand2Turno);
             this.Controls.Add(this.lbl1Cand2Turno);
@@ -310,9 +405,11 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.lbVotacao);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmResulttados";
-            this.Text = "frmResulttados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Urna Eletrônica - Resultados Eleições";
             this.Shown += new System.EventHandler(this.frmResulttados_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).EndInit();
@@ -348,5 +445,13 @@
         private System.Windows.Forms.Label lbl1Cand2Turno;
         private System.Windows.Forms.Label lbl2Cand2Turno;
         private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTotalEleitores;
+        private System.Windows.Forms.Label lblVotosValidos;
+        private System.Windows.Forms.Label lblBrancos;
+        private System.Windows.Forms.Label lblNulos;
     }
 }

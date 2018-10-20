@@ -29,7 +29,7 @@ namespace Projeto_eleicao
             lblPartido.Visible = true;
             lblPartido.Text = "Branco";
             lblConfirma.Visible = true;
-            txtVoto.Focus();
+            pbCandidato.Focus();
         }
 
         //----- FAZ A BUSCA PARA CONFERIR SE O VOTO FOI COMPUTADO
@@ -78,6 +78,7 @@ namespace Projeto_eleicao
             lblCandidato.Visible = false;
             lblPartido.Visible = false;
             lblConfirma.Visible = false;
+            voto = 0;
         }
 
         //QUANDO CLICAR NO BOTAO 1, MOSTRA O NUMERO NO TEXTBOX
@@ -166,7 +167,7 @@ namespace Projeto_eleicao
             {
                 pbCandidato.Focus();
                 //VERIFICA SE TXTVOTO ESTA VAZIO OU COM ESPACO EM BRANCO
-                if (string.IsNullOrEmpty(txtVoto.Text))
+                if (string.IsNullOrEmpty(txtVoto.Text) && voto >=0)
                 {
                     MessageBox.Show("Digite um Candidato");
                     resetaFormulario();
@@ -179,7 +180,7 @@ namespace Projeto_eleicao
                 }               
             }
             //SE A TECLA PRESSIONADA FOR S E CAMPO DE VOTO NAO ESTIVER VAZIO GRAVA VOTO
-            if (e.KeyValue == 83 && !string.IsNullOrEmpty(txtVoto.Text))
+            if (e.KeyValue == 83 && (!string.IsNullOrEmpty(txtVoto.Text) || voto < 0))
             {
                 registraVotos();
                 playSimpleSound();
@@ -189,11 +190,15 @@ namespace Projeto_eleicao
                 frmTempo.ShowDialog();
             }
             //SE A TECLA PRESSIONADA FOR N E CAMPO DE VOTO NAO ESTIVER VAZIO RESETA O FORM
-            if (e.KeyValue == 78 && !string.IsNullOrEmpty(txtVoto.Text))
+            if (e.KeyValue == 78 && (!string.IsNullOrEmpty(txtVoto.Text) || voto <0))
             {
                 resetaFormulario();
             }
         }
 
+        private void frmVotacao_Shown(object sender, EventArgs e)
+        {
+            lblTituloEleicao.Text = frmGerencial.eleicao.getTituloEleicao(frmGerencial.eleicao.getCodEleicao());
+        }
     }
 }

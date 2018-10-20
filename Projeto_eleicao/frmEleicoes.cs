@@ -80,7 +80,7 @@ namespace Projeto_eleicao
         public void enviaDados()
         {
             frmGerencial.eleicao.setDataCadastro(DateTime.Today);//PASSADO O DIA ATUAL COMO PARAMETRO
-            frmGerencial.eleicao.setDataEleicao(dtpDataEleicao.Value);
+            frmGerencial.eleicao.setDataEleicao(dtpDataEleicao.Value.Date);
             frmGerencial.eleicao.setTituloEleicao(txtTituloEleicao.Text);
             frmGerencial.eleicao.setCodigoEleicao(int.Parse(txtCodigo.Text));
             frmGerencial.eleicao.setPais(cbPaises.SelectedIndex);
@@ -115,13 +115,21 @@ namespace Projeto_eleicao
         //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            btnSalvar.Enabled = false;
-            btnCancelar.Enabled = false;
-            btnAlterar.Enabled = true;
-            btnExcluir.Enabled = true;
-            btnNovo.Enabled = true;
-            salvarCadastro();
-            frmGerencial.eleicao.limpaLista();
+            if(frmGerencial.eleicao.getTamListaCandidatos() >= 2)
+            {
+                btnSalvar.Enabled = false;
+                btnCancelar.Enabled = false;
+                btnAlterar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnNovo.Enabled = true;
+                salvarCadastro();
+                frmGerencial.eleicao.limpaLista();
+            }
+            else
+            {
+                MessageBox.Show("É necessário cadastrar ao menos 2 candidatos!");
+            }
+            
         }
 
         //--- BOTÃO NOVO
@@ -163,7 +171,7 @@ namespace Projeto_eleicao
         {
             //-- INSTANCIA LISTA DE MODO QUE ZERA CANDIDATOS DA LISTA DE CANDIDATOS
             frmGerencial.eleicao.limpaLista();
-            this.Close();//ENCERRA A JANELA ATUAL
+            this.Close();//ENCERtA A JANELA ATUAL
         }
 
         //--- BOTÃO CANCELAR

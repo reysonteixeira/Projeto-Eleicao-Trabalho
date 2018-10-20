@@ -55,12 +55,11 @@ namespace Projeto_eleicao
             {
                 if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//CASO O CÓDIGO NA LISTA SEJA IGUAL AO CÓDIDO DA ELEIÇÃO RESCOLHIDA
                 {
-                    frmGerencial.eleicao.restauraEleicao(i);//RESTAURA OS DADOS DA ELEIÇÃO SELECIONADA
-                    frmGerencial.eleicao.setSituacaoEleicao(2);//MUDA O STATUS PARA 2 - FINALIZADA
-                    frmGerencial.eleicao.insereLista(i);//SALVA AS INFORMAÇÕES NOVAMENTE NA LISTA
+                    frmGerencial.eleicao.setCodEleicao(i);
+                    frmCodigoSegurancacs frmCodigoSeguranca = new frmCodigoSegurancacs();
+                    frmCodigoSeguranca.ShowDialog();
                     cbEleicoes.Items.Clear();//LIMPA A LISTA
                     preencheComboBox();//PREENCHE A LISTA NOVAMENTE
-                    MessageBox.Show("Eleição encerrada com sucesso!");
                 }
             }
         }

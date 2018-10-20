@@ -34,6 +34,7 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -48,18 +49,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(253, 37);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(279, 226);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 31);
+            this.label1.Size = new System.Drawing.Size(80, 55);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "20";
             // 
             // progressBar2
             // 
             this.progressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar2.Location = new System.Drawing.Point(40, 143);
+            this.progressBar2.Location = new System.Drawing.Point(49, 123);
             this.progressBar2.Maximum = 202;
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(524, 44);
@@ -72,7 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(157, 208);
+            this.label2.Location = new System.Drawing.Point(177, 182);
             this.label2.Margin = new System.Windows.Forms.Padding(1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(286, 31);
@@ -86,12 +87,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(188, 96);
+            this.label3.Location = new System.Drawing.Point(216, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 31);
             this.label3.TabIndex = 3;
             this.label3.Text = "Liberando Urna";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(240, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(156, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Voto Confirmado!";
             // 
             // frmTempo
             // 
@@ -99,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(626, 302);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar2);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

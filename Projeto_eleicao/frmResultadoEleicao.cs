@@ -97,10 +97,9 @@ namespace Projeto_eleicao
                             int codigo = frmGerencial.eleicao.getCodigo(j);
                             string titulo = frmGerencial.eleicao.getTituloEleicao(j);
                             DateTime data = frmGerencial.eleicao.getDataEleicao(j);
-                            data.ToShortDateString();
                             int situacao = frmGerencial.eleicao.getSituacaoEleicao(j);
-                            int comparaInicio = DateTime.Compare(data, dtpInicio.Value);
-                            int comparaFim = DateTime.Compare(data, dtpFim.Value);
+                            int comparaInicio = DateTime.Compare(data.Date, dtpInicio.Value.Date);
+                            int comparaFim = DateTime.Compare(data.Date,dtpFim.Value.Date);
                             if (comparaInicio >= 0 && comparaFim <= 0)
                             {
                                 string stringSituacao;
@@ -139,8 +138,12 @@ namespace Projeto_eleicao
                     if (dgvEleicao[3, indice].Value.ToString() == "Encerrada")
                     {
                         frmGerencial.eleicao.setCodEleicao(k);
-                        frmResulttados frmVerResultados = new frmResulttados();
-                        frmVerResultados.ShowDialog();
+                        frmCodigoSegurancacs frmCodigoSeg = new frmCodigoSegurancacs();
+                        frmCodigoSeg.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Apenas eleições encerradas podem ter resultados exibidos!");
                     }
                 }         
             }

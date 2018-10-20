@@ -48,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPartido = new System.Windows.Forms.Label();
             this.pbCandidato = new System.Windows.Forms.PictureBox();
+            this.lblTituloEleicao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbCandidato)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,13 +251,23 @@
             // 
             this.pbCandidato.Image = global::Projeto_eleicao.Properties.Resources.perfil_macho_utilizador_sombra_318_40244;
             this.pbCandidato.InitialImage = global::Projeto_eleicao.Properties.Resources.perfil_macho_utilizador_sombra_318_40244;
-            this.pbCandidato.Location = new System.Drawing.Point(50, 28);
+            this.pbCandidato.Location = new System.Drawing.Point(50, 60);
             this.pbCandidato.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbCandidato.Name = "pbCandidato";
-            this.pbCandidato.Size = new System.Drawing.Size(339, 396);
+            this.pbCandidato.Size = new System.Drawing.Size(339, 364);
             this.pbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCandidato.TabIndex = 0;
             this.pbCandidato.TabStop = false;
+            // 
+            // lblTituloEleicao
+            // 
+            this.lblTituloEleicao.AutoSize = true;
+            this.lblTituloEleicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloEleicao.Location = new System.Drawing.Point(46, 28);
+            this.lblTituloEleicao.Name = "lblTituloEleicao";
+            this.lblTituloEleicao.Size = new System.Drawing.Size(66, 24);
+            this.lblTituloEleicao.TabIndex = 28;
+            this.lblTituloEleicao.Text = "label1";
             // 
             // frmVotacao
             // 
@@ -264,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
+            this.Controls.Add(this.lblTituloEleicao);
             this.Controls.Add(this.lblPartido);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblConfirma);
@@ -292,6 +304,7 @@
             this.MinimizeBox = false;
             this.Name = "frmVotacao";
             this.Text = "Urna Eletrônica - Votação";
+            this.Shown += new System.EventHandler(this.frmVotacao_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmVotacao_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbCandidato)).EndInit();
             this.ResumeLayout(false);
@@ -320,5 +333,6 @@
         private System.Windows.Forms.Label lblConfirma;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPartido;
+        private System.Windows.Forms.Label lblTituloEleicao;
     }
 }

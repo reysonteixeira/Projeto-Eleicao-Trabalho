@@ -12,7 +12,7 @@ namespace Projeto_eleicao
 {
     public partial class frmTempo : Form
     {
-        int segundos = 0;
+        int segundos = 20;
         public frmTempo()
         {
             InitializeComponent();
@@ -36,15 +36,16 @@ namespace Projeto_eleicao
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-            label1.Text = DateTime.Now.ToLongTimeString();
+
             label1.Visible = true;
-            segundos = segundos + 1;
+            //label1.Text = DateTime.Now.ToLongTimeString();
+            label1.Text = segundos.ToString();
+            segundos = segundos - 1;
             if (progressBar2.Value < 2000)
             {
                 progressBar2.Increment(10);                
             }
-            if (segundos > 21)
+            if (segundos <= -1)
             {
                 this.Close();
             }

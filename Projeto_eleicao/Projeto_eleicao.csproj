@@ -49,6 +49,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Eleicao.cs" />
+    <Compile Include="frmCodigoSegurancacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodigoSegurancacs.Designer.cs">
+      <DependentUpon>frmCodigoSegurancacs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCodSeguranca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodSeguranca.designer.cs">
+      <DependentUpon>frmCodSeguranca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicioEleicao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCodigoSegurancacs.resx">
+      <DependentUpon>frmCodigoSegurancacs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCodSeguranca.resx">
+      <DependentUpon>frmCodSeguranca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicioEleicao.resx">
       <DependentUpon>frmInicioEleicao.cs</DependentUpon>
     </EmbeddedResource>

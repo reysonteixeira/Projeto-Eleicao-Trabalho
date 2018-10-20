@@ -19,6 +19,10 @@ namespace Projeto_eleicao
         public int[] votos = new int[frmGerencial.eleicao.getTamListaCandidatos()];
         public float[] porcentagem = new float[frmGerencial.eleicao.getTamListaCandidatos()];
         public bool resultado = false;
+        public int brancos =0;
+        public int nulos = 0;
+        public float porcentagemBrancos;
+        public float porcentagemNulos;
 
         private void frmResulttados_Shown(object sender, EventArgs e)
         {
@@ -28,7 +32,12 @@ namespace Projeto_eleicao
             contaVotos();
             cadastroPorcentagem();
             resultadoFinal();
+            lbVotacao.SelectedIndex = 0;
             lblTituloEleicao.Text = frmGerencial.eleicao.getTituloEleicao(frmGerencial.eleicao.getCodEleicao());
+            lblTotalEleitores.Text = frmGerencial.eleicao.getQuantiVotos().ToString();
+            lblVotosValidos.Text = (frmGerencial.eleicao.getQuantiVotos() - (nulos + brancos)).ToString();
+            lblNulos.Text = porcentagemNulos.ToString("N2") + "%";
+            lblBrancos.Text = porcentagemBrancos.ToString("N2") + "%";
         }
 
         public void preencheLb()
@@ -46,7 +55,7 @@ namespace Projeto_eleicao
             lblNomeCandidato.Text = frmGerencial.eleicao.getNomeCompleto(lbVotacao.SelectedIndex);
             pbDescricao.Load(frmGerencial.eleicao.getFoto(lbVotacao.SelectedIndex));
             lblVotos.Text = votos[lbVotacao.SelectedIndex].ToString();
-            lblPorcentagem.Text = porcentagem[lbVotacao.SelectedIndex].ToString() + "%";
+            lblPorcentagem.Text = porcentagem[lbVotacao.SelectedIndex].ToString("N2") + "%";
         }
 
         public void contaVotos()
@@ -55,14 +64,28 @@ namespace Projeto_eleicao
             {
                 for (int i = 0; i < frmGerencial.eleicao.getQuantiVotos(); i++)
                 {
-                    if(frmGerencial.eleicao.getNumPartido(j) == frmGerencial.eleicao.getVotos(i))
+                    if (frmGerencial.eleicao.getNumPartido(j) == frmGerencial.eleicao.getVotos(i))
                     {
                         votos[j] += 1;
                     }
                 }
             }
-        }
 
+            for (int i = 0; i < frmGerencial.eleicao.getQuantiVotos(); i++)
+            {
+                if (frmGerencial.eleicao.getVotos(i) == -1)
+                {
+                   nulos++;
+                }
+                else
+                {
+                    if(frmGerencial.eleicao.getVotos(i) == -2)
+                    {
+                        brancos++;
+                    }
+                }
+            }
+        }
         public void zeraVotos()
         {
             for (int j = 0; j < frmGerencial.eleicao.getTamListaCandidatos(); j++)
@@ -73,13 +96,15 @@ namespace Projeto_eleicao
 
         public void cadastroPorcentagem()
         {
-
+            float quantidadeVotos;
             for (int j = 0; j < frmGerencial.eleicao.getTamListaCandidatos(); j++)
             {
-                float quantidadeVotos = frmGerencial.eleicao.getQuantiVotos();
+                quantidadeVotos = frmGerencial.eleicao.getQuantiVotos();
                 porcentagem[j] = votos[j] / quantidadeVotos *100 ;
-                MessageBox.Show(votos[j].ToString());
             }
+            quantidadeVotos = frmGerencial.eleicao.getQuantiVotos();
+            porcentagemBrancos = brancos / quantidadeVotos * 100;
+            porcentagemNulos = nulos / quantidadeVotos * 100;
         }
 
         public void resultadoFinal()
@@ -103,42 +128,48 @@ namespace Projeto_eleicao
             {
                 pb1Turno.Visible = false;
                 pb1Turno.Enabled = false;
-                float maior = porcentagem.Max();
-                for (int i = 0; i < frmGerencial.eleicao.getTamListaCandidatos(); i++)
+                if ((porcentagemBrancos + porcentagemNulos) > 50)
                 {
-                    if (porcentagem[i]==maior)
-                    {
-                        posicaoMaior = i;
-                    }
-                }
-
-                if(posicaoMaior != 0)
-                {
-                    maior = porcentagem[0];
-                    posicaoSegundo = 0;
+                    lblResultado.Text = "Eleição inválida! Uma nova eleição deve ser feita";
                 }
                 else
                 {
-                    maior = porcentagem[1];
-                    posicaoSegundo = 1;
-                }
+                    float maior = porcentagem.Max();
+                    for (int i = 0; i < frmGerencial.eleicao.getTamListaCandidatos(); i++)
+                    {
+                        if (porcentagem[i] == maior)
+                        {
+                            posicaoMaior = i;
+                        }
+                    }
 
-                for(int i=1; i<frmGerencial.eleicao.getTamListaCandidatos();i++)
-                {
-                    if(porcentagem[i] >maior && posicaoMaior!=i) 
+                    if (posicaoMaior != 0)
+                    {
+                        maior = porcentagem[0];
+                        posicaoSegundo = 0;
+                    }
+                    else
                     {
                         maior = porcentagem[1];
                         posicaoSegundo = 1;
                     }
-                }
 
-                pb2Turno1.Load(frmGerencial.eleicao.getFoto(posicaoMaior));
-                pb2Turno2.Load(frmGerencial.eleicao.getFoto(posicaoSegundo));
-                lbl1Cand2Turno.Text = frmGerencial.eleicao.getNomeCompleto(posicaoMaior);
-                lbl2Cand2Turno.Text = frmGerencial.eleicao.getNomeCompleto(posicaoSegundo);
-                lbl2Cand2Turno.Visible = true;
-                lbl1Cand2Turno.Visible = true;
-               
+                    for (int i = 1; i < frmGerencial.eleicao.getTamListaCandidatos(); i++)
+                    {
+                        if (porcentagem[i] > maior && posicaoMaior != i)
+                        {
+                            maior = porcentagem[1];
+                            posicaoSegundo = 1;
+                        }
+                    }
+                    lblResultado.Text = "Eleição deverá ter segundo turno!";
+                    pb2Turno1.Load(frmGerencial.eleicao.getFoto(posicaoMaior));
+                    pb2Turno2.Load(frmGerencial.eleicao.getFoto(posicaoSegundo));
+                    lbl1Cand2Turno.Text = frmGerencial.eleicao.getNomeCompleto(posicaoMaior);
+                    lbl2Cand2Turno.Text = frmGerencial.eleicao.getNomeCompleto(posicaoSegundo);
+                    lbl2Cand2Turno.Visible = true;
+                    lbl1Cand2Turno.Visible = true;
+                }
             }
         }
     }

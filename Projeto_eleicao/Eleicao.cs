@@ -240,6 +240,10 @@ namespace Projeto_eleicao
         public int getVotos(int i) => eleicoes.votos[i];
 
         public int getQuantiVotos() => eleicoes.votos.Count;
-        
+
+
+
+        bool validadorCodigoSeg;
+
     }
 }
