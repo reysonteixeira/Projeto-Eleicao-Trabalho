@@ -156,5 +156,77 @@ namespace Projeto_eleicao
         {
             this.Close();//FECHA A JANELA
         }
+
+        private void txtNomeCompleto_Validated(object sender, EventArgs e)
+        {
+            if (txtNomeCompleto.Text.Trim() == "")
+            {
+                epNC.SetError(txtNomeCompleto, "Insira o nome completo do candidato");
+            }
+            else
+            {
+                epNC.Clear();
+            }
+        }
+
+        private void txtNomeAbreviado_Validated(object sender, EventArgs e)
+        {
+            if (txtNomeAbreviado.Text.Trim() == "")
+            {
+                epNA.SetError(txtNomeAbreviado, "Insira o nome abreviado do candidato");
+            }
+            else
+            {
+                epNA.Clear();
+            }
+        }
+
+        private void txtNascimento_Validated(object sender, EventArgs e)
+        {
+            if (txtNascimento.Text.Trim() == "")
+            {
+                epN.SetError(txtNascimento, "Insira a data de nascimento do candidato");
+            }
+            else
+            {
+                epN.Clear();
+            }
+        }
+
+        private void txtPartidoNum_Validated(object sender, EventArgs e)
+        {
+            if (txtPartidoNum.Text.Trim() == "")
+            {
+                epPNum.SetError(txtPartidoNum, "Insira o número do partido do candidato");
+            }
+            else
+            {
+                epPNum.Clear();
+            }
+        }
+
+        private void txtPartidoNome_Validated(object sender, EventArgs e)
+        {
+            if (txtPartidoNome.Text.Trim() == "")
+            {
+                epPNome.SetError(txtPartidoNome, "Insira o nome do partido do candidato");
+            }
+            else
+            {
+                epPNome.Clear();
+            }
+        }
+
+        private void pbFoto_Validated(object sender, EventArgs e)
+        {
+            if (pbFoto.Text.Trim() == "openFileDialog1")
+            {
+                epFoto.SetError(pbFoto, "Insira uma foto do candidato");
+            }
+            else
+            {
+                epFoto.Clear();
+            }
+        }
     }
 }

@@ -18,9 +18,9 @@ namespace Projeto_eleicao
     //##################################################################################################################################
 
     public partial class frmLogin : Form
-    { 
+    {
         //################################################ MÉTODOS AO CARREGAR FORMULÁRIO #################################################
-        
+
         //----- MÉTODO CONSTRUTOR
         public frmLogin()
         {
@@ -32,14 +32,38 @@ namespace Projeto_eleicao
         {
             if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")//SE O LOGIN E SENHA CORRESPONDEREM
             {
-               
+
                 frmGerencial frmGerencial = new frmGerencial();//ABRE A ELEIÇÃO
                 frmGerencial.ShowDialog();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Usuário ou senha inválidos");
+                MessageBox.Show("Usuário ou senha inválido");
+            }
+        }
+
+        private void txtUsuario_Validated(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text.Trim() == "")
+            {
+                epUsuario.SetError(txtUsuario, "Insira um nome de usuário");
+            }
+            else
+            {
+                epUsuario.Clear();
+            }
+        }
+
+        private void txtSenha_Validated(object sender, EventArgs e)
+        {
+            if (txtSenha.Text.Trim() == "")
+            {
+                epSenha.SetError(txtSenha, "Insira uma senha");
+            }
+            else
+            {
+                epSenha.Clear();
             }
         }
 
@@ -48,14 +72,28 @@ namespace Projeto_eleicao
         {
             if (e.KeyChar == 13)//CASO TECLE ENTER
             {
-                Login();//CHAMA FUNÇÃO QUE FAZ LOGIN
+                if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtSenha.Text))
+                {
+                    MessageBox.Show("Os campos Usuário e Senha devem ser preenchidos");
+                }
+                else
+                {
+                    Login(); //CHAMA FUNÇÃO QUE FAZ LOGIN
+                }
             }
         }
 
         //----- BOTÃO LOGIN
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Login();//CHAMA FUNÇÃO QUE FAZ LOGIN
+            if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtSenha.Text))
+            {
+                MessageBox.Show("Os campos Usuário e Senha devem ser preenchidos");
+            }
+            else
+            {
+                Login(); //CHAMA FUNÇÃO QUE FAZ LOGIN
+            }
         }
     }
 }

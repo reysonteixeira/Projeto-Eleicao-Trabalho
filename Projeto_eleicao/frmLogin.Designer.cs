@@ -36,9 +36,11 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epUsuario = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epSenha = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSenha)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +70,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(118, 26);
             this.txtUsuario.TabIndex = 2;
-        
+            this.txtUsuario.Validated += new System.EventHandler(this.txtUsuario_Validated);
             // 
             // label2
             // 
@@ -86,7 +88,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(118, 26);
             this.txtSenha.TabIndex = 4;
-            
+            this.txtSenha.Validated += new System.EventHandler(this.txtSenha_Validated);
             // 
             // label3
             // 
@@ -107,9 +109,13 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // epError
+            // epUsuario
             // 
-            this.epError.ContainerControl = this;
+            this.epUsuario.ContainerControl = this;
+            // 
+            // epSenha
+            // 
+            this.epSenha.ContainerControl = this;
             // 
             // frmLogin
             // 
@@ -134,7 +140,8 @@
             this.Text = "Login";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epSenha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,7 +156,8 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ErrorProvider epError;
+        private System.Windows.Forms.ErrorProvider epUsuario;
+        private System.Windows.Forms.ErrorProvider epSenha;
     }
 }
 

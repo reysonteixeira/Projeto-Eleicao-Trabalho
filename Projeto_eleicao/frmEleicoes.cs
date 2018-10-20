@@ -26,7 +26,6 @@ namespace Projeto_eleicao
             InitializeComponent();
         }
 
-
         //####################################################   VARIÁVEIS   ##########################################################
 
         int cod;//ARMAZENARÁ O INDICE DA ELEIÇÃO QUE SERÁ EDITADA
@@ -125,21 +124,27 @@ namespace Projeto_eleicao
         //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(frmGerencial.eleicao.getTamListaCandidatos() >= 2)
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtTituloEleicao.Text) || string.IsNullOrEmpty(txtCodSeguranca.Text) || cbPaises.SelectedIndex == -1)
             {
-                btnSalvar.Enabled = false;
-                btnCancelar.Enabled = false;
-                btnAlterar.Enabled = true;
-                btnExcluir.Enabled = true;
-                btnNovo.Enabled = true;
-                salvarCadastro();
-                frmGerencial.eleicao.limpaLista();
+                MessageBox.Show("Todos os campos devem ser preenchidos");
             }
             else
             {
-                MessageBox.Show("É necessário cadastrar ao menos 2 candidatos!");
+                if (frmGerencial.eleicao.getTamListaCandidatos() >= 2)
+                {
+                    btnSalvar.Enabled = false;
+                    btnCancelar.Enabled = false;
+                    btnAlterar.Enabled = true;
+                    btnExcluir.Enabled = true;
+                    btnNovo.Enabled = true;
+                    salvarCadastro();
+                    frmGerencial.eleicao.limpaLista();
+                }
+                else
+                {
+                    MessageBox.Show("É necessário cadastrar ao menos 2 candidatos!");
+                }
             }
-            
         }
 
         //--- BOTÃO NOVO
@@ -259,7 +264,6 @@ namespace Projeto_eleicao
             if (txtCodigo.Text.Trim() == "")
             {
                 epCE.SetError(txtCodigo, "Insira um código para a eleição");
-                txtCodigo.Focus();
             }
             else
             {
@@ -272,7 +276,6 @@ namespace Projeto_eleicao
             if (txtTituloEleicao.Text.Trim() == "")
             {
                 epTE.SetError(txtTituloEleicao, "Insira um título para a eleição");
-                txtTituloEleicao.Focus();
             }
             else
             {
@@ -285,7 +288,6 @@ namespace Projeto_eleicao
             if (txtCodSeguranca.Text.Trim() == "")
             {
                 epCS.SetError(txtCodSeguranca, "Insira um código de segurança para a eleição");
-                txtCodSeguranca.Focus();
             }
             else
             {
@@ -298,7 +300,6 @@ namespace Projeto_eleicao
             if (cbPaises.SelectedIndex == -1)
             {
                 epP.SetError(cbPaises, "Selecione um país para a eleição");
-                cbPaises.Focus();
             }
             else
             {

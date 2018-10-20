@@ -49,9 +49,21 @@
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.epNC = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epNA = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epN = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPNum = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPNome = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epFoto = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPNome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeCompleto
@@ -63,6 +75,7 @@
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(409, 26);
             this.txtNomeCompleto.TabIndex = 0;
+            this.txtNomeCompleto.Validated += new System.EventHandler(this.txtNomeCompleto_Validated);
             // 
             // txtNomeAbreviado
             // 
@@ -73,6 +86,7 @@
             this.txtNomeAbreviado.Name = "txtNomeAbreviado";
             this.txtNomeAbreviado.Size = new System.Drawing.Size(184, 26);
             this.txtNomeAbreviado.TabIndex = 1;
+            this.txtNomeAbreviado.Validated += new System.EventHandler(this.txtNomeAbreviado_Validated);
             // 
             // txtNascimento
             // 
@@ -84,6 +98,7 @@
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(88, 26);
             this.txtNascimento.TabIndex = 2;
+            this.txtNascimento.Validated += new System.EventHandler(this.txtNascimento_Validated);
             // 
             // label1
             // 
@@ -142,6 +157,7 @@
             this.txtPartidoNome.Name = "txtPartidoNome";
             this.txtPartidoNome.Size = new System.Drawing.Size(194, 26);
             this.txtPartidoNome.TabIndex = 3;
+            this.txtPartidoNome.Validated += new System.EventHandler(this.txtPartidoNome_Validated);
             // 
             // txtPartidoNum
             // 
@@ -150,6 +166,7 @@
             this.txtPartidoNum.Name = "txtPartidoNum";
             this.txtPartidoNum.Size = new System.Drawing.Size(60, 26);
             this.txtPartidoNum.TabIndex = 2;
+            this.txtPartidoNum.Validated += new System.EventHandler(this.txtPartidoNum_Validated);
             // 
             // label6
             // 
@@ -212,6 +229,7 @@
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 7;
             this.pbFoto.TabStop = false;
+            this.pbFoto.Validated += new System.EventHandler(this.pbFoto_Validated);
             // 
             // btnSair
             // 
@@ -238,6 +256,30 @@
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
+            // epNC
+            // 
+            this.epNC.ContainerControl = this;
+            // 
+            // epNA
+            // 
+            this.epNA.ContainerControl = this;
+            // 
+            // epN
+            // 
+            this.epN.ContainerControl = this;
+            // 
+            // epPNum
+            // 
+            this.epPNum.ContainerControl = this;
+            // 
+            // epPNome
+            // 
+            this.epPNome.ContainerControl = this;
+            // 
+            // epFoto
+            // 
+            this.epFoto.ContainerControl = this;
             // 
             // frmCandidatos
             // 
@@ -270,6 +312,12 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPNome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +344,11 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.ErrorProvider epNC;
+        private System.Windows.Forms.ErrorProvider epNA;
+        private System.Windows.Forms.ErrorProvider epN;
+        private System.Windows.Forms.ErrorProvider epPNum;
+        private System.Windows.Forms.ErrorProvider epPNome;
+        private System.Windows.Forms.ErrorProvider epFoto;
     }
 }
