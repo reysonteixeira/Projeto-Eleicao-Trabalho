@@ -68,7 +68,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(118, 26);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Validated += new System.EventHandler(this.txtUsuario_Validated);
+        
             // 
             // label2
             // 
@@ -86,7 +86,7 @@
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(118, 26);
             this.txtSenha.TabIndex = 4;
-            this.txtSenha.Validated += new System.EventHandler(this.txtSenha_Validated);
+            
             // 
             // label3
             // 
