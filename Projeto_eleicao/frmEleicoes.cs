@@ -253,5 +253,57 @@ namespace Projeto_eleicao
                 MessageBox.Show("Não existe nenhum candidato selecionado!");
             }
         }
+
+        private void txtCodigo_Validated(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text.Trim() == "")
+            {
+                epCE.SetError(txtCodigo, "Insira um código para a eleição");
+                txtCodigo.Focus();
+            }
+            else
+            {
+                epCE.Clear();
+            }
+        }
+
+        private void txtTituloEleicao_Validated(object sender, EventArgs e)
+        {
+            if (txtTituloEleicao.Text.Trim() == "")
+            {
+                epTE.SetError(txtTituloEleicao, "Insira um título para a eleição");
+                txtTituloEleicao.Focus();
+            }
+            else
+            {
+                epTE.Clear();
+            }
+        }
+
+        private void txtCodSeguranca_Validated(object sender, EventArgs e)
+        {
+            if (txtCodSeguranca.Text.Trim() == "")
+            {
+                epCS.SetError(txtCodSeguranca, "Insira um código de segurança para a eleição");
+                txtCodSeguranca.Focus();
+            }
+            else
+            {
+                epCS.Clear();
+            }
+        }
+
+        private void cbPaises_Validated(object sender, EventArgs e)
+        {
+            if (cbPaises.SelectedIndex == -1)
+            {
+                epP.SetError(cbPaises, "Selecione um país para a eleição");
+                cbPaises.Focus();
+            }
+            else
+            {
+                epP.Clear();
+            }
+        }
     }
 }

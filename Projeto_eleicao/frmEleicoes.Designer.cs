@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEleicoes));
             this.cbPaises = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +53,15 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.epCE = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epTE = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epCS = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epP = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epP)).BeginInit();
             this.SuspendLayout();
             // 
             // cbPaises
@@ -77,6 +86,7 @@
             this.cbPaises.Name = "cbPaises";
             this.cbPaises.Size = new System.Drawing.Size(153, 28);
             this.cbPaises.TabIndex = 47;
+            this.cbPaises.Validated += new System.EventHandler(this.cbPaises_Validated);
             // 
             // label4
             // 
@@ -133,6 +143,7 @@
             this.txtTituloEleicao.Name = "txtTituloEleicao";
             this.txtTituloEleicao.Size = new System.Drawing.Size(410, 26);
             this.txtTituloEleicao.TabIndex = 35;
+            this.txtTituloEleicao.Validated += new System.EventHandler(this.txtTituloEleicao_Validated);
             // 
             // groupBox1
             // 
@@ -226,6 +237,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 26);
             this.txtCodigo.TabIndex = 49;
+            this.txtCodigo.Validated += new System.EventHandler(this.txtCodigo_Validated);
             // 
             // txtCodSeguranca
             // 
@@ -234,6 +246,7 @@
             this.txtCodSeguranca.Name = "txtCodSeguranca";
             this.txtCodSeguranca.Size = new System.Drawing.Size(165, 26);
             this.txtCodSeguranca.TabIndex = 50;
+            this.txtCodSeguranca.Validated += new System.EventHandler(this.txtCodSeguranca_Validated);
             // 
             // label5
             // 
@@ -324,6 +337,22 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // epCE
+            // 
+            this.epCE.ContainerControl = this;
+            // 
+            // epTE
+            // 
+            this.epTE.ContainerControl = this;
+            // 
+            // epCS
+            // 
+            this.epCS.ContainerControl = this;
+            // 
+            // epP
+            // 
+            this.epP.ContainerControl = this;
+            // 
             // frmEleicoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -356,6 +385,10 @@
             this.Text = "Urna Eletrônica - Cadastro de Eleições";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epCE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epTE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epCS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +419,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider epCE;
+        private System.Windows.Forms.ErrorProvider epTE;
+        private System.Windows.Forms.ErrorProvider epCS;
+        private System.Windows.Forms.ErrorProvider epP;
     }
 }
