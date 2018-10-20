@@ -46,5 +46,31 @@ namespace Projeto_eleicao
                 Login();
             }
         }
+
+        private void txtUsuario_Validated(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text.Trim() == "")
+            {
+                epError.SetError(txtUsuario, "Insira um nome de usuário");
+                txtUsuario.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
+
+        private void txtSenha_Validated(object sender, EventArgs e)
+        {
+            if (txtSenha.Text.Trim() == "")
+            {
+                epError.SetError(txtSenha, "Insira uma senha");
+                txtSenha.Focus();
+            }
+            else
+            {
+                epError.Clear();
+            }
+        }
     }
 }
