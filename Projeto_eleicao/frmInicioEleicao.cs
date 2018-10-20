@@ -10,13 +10,24 @@ using System.Windows.Forms;
 
 namespace Projeto_eleicao
 {
+    //##################################################################################################################################
+
+    //                                          FORMULÁRIO QUE INICIA VOTAÇÕES
+
+    //##################################################################################################################################
+
     public partial class frmInicioEleicao : Form
     {
+        //########################################## MÉTODOS AO CARREGAR ELEIÇÃO #######################################################
+
         //----- CONSTRUTOR
         public frmInicioEleicao()
         {
             InitializeComponent();
         }
+
+
+        //#####################################  MÉTODOS DE MANIPULAÇÃO COM ELEMENTOS DO FORMULLÁRIO  #########################################
 
         //----- RADIO BUTTON INICIAR
         private void rbIniciar_CheckedChanged(object sender, EventArgs e)
@@ -60,6 +71,9 @@ namespace Projeto_eleicao
             }
         }
 
+
+        //##############################################  MÉTODOS DE MANIPULAÇÃO COM ELEMENTOS DA ELEIÇÃO  ##########################################
+
         //----- BOTÃO INICIAR
         private void btnIniciar_Click(object sender, EventArgs e)
         {
@@ -80,13 +94,14 @@ namespace Projeto_eleicao
                     }
                     else
                     {
-                        TimeSpan dias = (frmGerencial.eleicao.getDataEleicao(i) - DateTime.Now);
+                        TimeSpan dias = (frmGerencial.eleicao.getDataEleicao(i).Date - DateTime.Now.Date);//RECEBE A QUANTIDADE DE DIAS ATÉ O INICIO
                         MessageBox.Show("impossível iniciar eleição! Restam: " + dias.Days + " dias para poder iniciar!");
                     }
                 }
             }
         }
 
+        //----- BOTÃO CONTINUAR
         private void btnContinuar_Click(object sender, EventArgs e)
         {
             string[] eleicao = cbEleicao.SelectedItem.ToString().Split('-');//VARIÁVEL RECEBE A SUBSTRING REFERENTE AO CÓDIGO DA ELEIÇÃO
@@ -94,7 +109,7 @@ namespace Projeto_eleicao
             {
                 if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//VERIFICA SE O ITEM SELECIONA CORRESPONDE AO CADASTRO NA LISTA
                 {
-                    frmGerencial.eleicao.setCodEleicao(i);
+                    frmGerencial.eleicao.setCodEleicao(i);//CONFIGURA A ELEIÇÃO QUE SERÁ VOTADA
                     frmVotacao frmVotacao = new frmVotacao();//ABRE O FORMULÁRIO PARA VOTAÇÃO
                     frmVotacao.ShowDialog();
                 }

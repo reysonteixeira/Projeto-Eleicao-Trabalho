@@ -8,7 +8,7 @@ namespace Projeto_eleicao
 {
     public class Eleicao
     {
-
+        //----- CONSTRUTOR
         public Eleicao()
         {
             eleicoes.listaCandidato = new List<Candidato>();
@@ -16,6 +16,8 @@ namespace Projeto_eleicao
 
 
         //###################################################  CANDIDATOS  ###############################################################
+
+        //--------------------------------------------------------- VARIÁVEIS ---------------------------------------------------------
         public struct Candidato
         {
             public string nomeCompleto, nomeAbreviado, nomePartido, nascimento, foto;
@@ -24,14 +26,17 @@ namespace Projeto_eleicao
 
         public Candidato candidato = new Candidato();
 
-        public void insereCandidato()
+        public void insereCandidato()//FAZ A ADIÇÃO DE NOVO CANDIDATO
         {
             eleicoes.listaCandidato.Add(candidato);
         }
 
-        private int indice;
+        private int indice;//INDICE É RESPONSÁVEL PELA VALIDAÇÃO DE NOVO CADASTRO OU ALTERAÇÃO
+
 
         //##################################################  MÉTODO SET  ##############################################################
+
+        //-------------------------------------------------- RECUPERAÇÃO DE VALORES ----------------------------------------------------
 
         public void setNomeCompleto(string nome)
         {
@@ -71,6 +76,8 @@ namespace Projeto_eleicao
 
         //##################################################  MÉTODO GET  ##############################################################
 
+        //----------------------------------------------- ATRIBUIÇÃO DE VALORES --------------------------------------------------------
+
         public string getNomePartido(int i) => eleicoes.listaCandidato[i].nomePartido;
 
         public string getNascimento(int i) => eleicoes.listaCandidato[i].nascimento;
@@ -88,24 +95,24 @@ namespace Projeto_eleicao
         public int getTamListaCandidatos() => eleicoes.listaCandidato.Count;
 
 
+        //################################################### MÉTODOS DA CLASSE ########################################################
 
-        public void limpaLista()
+        public void limpaLista()//INSTANCIA NOVA LSITA DE CANDIDATOS PARA NOVA INSERÇÃO DE CADASTRO DE ELEIÇÃO
         {
             eleicoes.listaCandidato = new List<Candidato>();
         }
 
-
         public void removeCandidatoLista(int i)
         {
-            eleicoes.listaCandidato.RemoveAt(i);
+            eleicoes.listaCandidato.RemoveAt(i);//REMOVE CADASTRO EM POSIÇÃO PRE DEFINIDA
         }
-
 
 
         //####################################################  ELEIÇÕES  ################################################################
 
-        private int CodEleicao;
+        private int CodEleicao;//INDICE QUE MARCA SE CADASTRO DE ELEIÇÃO É NOVO OU EDIÇÃO
 
+        //-------------------------------------------------------  VARIÁVEIS  --------------------------------------------------------
         public enum pais
         {
             Argentina = 0, Bolívia = 1, Brasil = 2, Chile = 3, Colômbia = 4, Equador = 5, Guiana = 6, Paraguai = 7
@@ -128,14 +135,10 @@ namespace Projeto_eleicao
         
         public Eleicoes eleicoes = new Eleicoes();
 
-        public void setListaCandidato(int i)
-        {
-            eleicoes.listaCandidato = listaEleicoes[i].listaCandidato;
-        }
-
 
         //##################################################  MÉTODO SET  ##############################################################
 
+        //-------------------------------------------------- RECUPERAÇÃO DE DADOS -----------------------------------------------------
         public void setSituacaoEleicao(int i)
         {
             eleicoes.situacao = i;
@@ -176,8 +179,14 @@ namespace Projeto_eleicao
             eleicoes.codigoPais = (pais)pais;
         }
 
+        public void setListaCandidato(int i)
+        {
+            eleicoes.listaCandidato = listaEleicoes[i].listaCandidato;
+        }
+
         //##################################################  MÉTODO GET  ##############################################################
 
+        //------------------------------------------------- ATRIBUIÇÕES DE VALORES ----------------------------------------------------
         public int getSituacaoEleicao(int i) => listaEleicoes[i].situacao;
 
         public string getCandidato() => eleicoes.listaCandidato[0].nomeCompleto;
@@ -196,54 +205,54 @@ namespace Projeto_eleicao
 
         public int getCodEleicao() => CodEleicao;
 
-        public int getTamanhoEleicao() => listaEleicoes.Count;
+        public int getTamanhoEleicao() => listaEleicoes.Count;//RETORNA A QUANTIDADE DE ELEIÇÕES CANDIDATOS
 
 
-        public void restauraEleicao(int i)
+        //################################################### MÉTODOS DA CLASSE ########################################################
+
+        public void restauraEleicao(int i)//RESTAURA DADOS DA ELEIÇÃO
         {
             eleicoes = listaEleicoes[i];
         }
 
-        public void insereLista()
+        public void insereLista()//INSERÇÃO DE CADASTRO NOVO
         {
             listaEleicoes.Add(eleicoes);
         }
 
-        public void insereLista(int n)
+        public void insereLista(int n)//INSERÇÃO DE EDIÇÃO
         {
             listaEleicoes[n] = eleicoes;
         }
 
-        public void removeLista(int i)
+        public void removeLista(int i)//REMOVE DADO DA LISTA
         {
             listaEleicoes.RemoveAt(i);
         }
 
-
-        public void insereCandidato(int i)
+        public void insereCandidato(int i)//INSERÇÃO DE CANDIDATOS
         {
             eleicoes.listaCandidato[i] = candidato;
         }
 
-        public string getCandCombo(int i) => eleicoes.listaCandidato[i].nomeCompleto;
+        public string getCandCombo(int i) => eleicoes.listaCandidato[i].nomeCompleto;//RETORNA DADOS DE CANDIDATOS EM ELEIÇÃO
 
-        public void instanciaVotos()
+
+        //####################################################  VOTOS  ################################################################
+
+        public void instanciaVotos()//ZERA A LISTA DE VOTOS PARA NOVA INSERÇÃO EM LISTA DE ELEIÇÕES
         {
             eleicoes.votos = new List<int>();
         }
 
-        public void registraVotos(int i)
+        public void registraVotos(int i)//ADICIONA O VOTO
         {
             eleicoes.votos.Add(i);
         }
 
-        public int getVotos(int i) => eleicoes.votos[i];
+        public int getVotos(int i) => eleicoes.votos[i];//RECUPERA OS VOTOS SALVOS
 
-        public int getQuantiVotos() => eleicoes.votos.Count;
-
-
-
-        bool validadorCodigoSeg;
+        public int getQuantiVotos() => eleicoes.votos.Count;//RETORNA A QUANTIDADE DE VOTOS EM LISTA
 
     }
 }

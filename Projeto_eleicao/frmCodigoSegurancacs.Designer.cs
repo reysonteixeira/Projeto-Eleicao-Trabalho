@@ -72,6 +72,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.btnOk);
             this.Name = "frmCodigoSegurancacs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Código de segurança";
             this.ResumeLayout(false);
             this.PerformLayout();

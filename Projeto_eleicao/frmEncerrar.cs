@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace Projeto_eleicao
 {
+    //##################################################################################################################################
+
+    //                                         FORMULÁRIO QUE ENCERRA A ELEIÇÃO SELECIONADA
+
+    //##################################################################################################################################
+
     public partial class frmEncerrar : Form
     {
         //############################################  MÉTODOS AO CARREGAR O FORMULÁRIO  ##############################################
@@ -50,17 +56,24 @@ namespace Projeto_eleicao
         //----- BOTÃO ENCERRAR
         private void btnEncerrar_Click(object sender, EventArgs e)
         {
-            string[] eleicao = cbEleicoes.SelectedItem.ToString().Split('-');//QUEBRA A STRING CONTIDA NA COMBOBOX EM SUBSTRING DE ACRODO COM A APARIÇÃO DO SINAL '-'
-            for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)//PERCORRE TODAS ELEIÇÕES CADASTRADAS
+            if (cbEleicoes.SelectedIndex > 0)//VERIRICA SE ALGUM ITEM FOI SELECIONADO NO COMBOBOX
             {
-                if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//CASO O CÓDIGO NA LISTA SEJA IGUAL AO CÓDIDO DA ELEIÇÃO RESCOLHIDA
+                string[] eleicao = cbEleicoes.SelectedItem.ToString().Split('-');//QUEBRA A STRING CONTIDA NA COMBOBOX EM SUBSTRING DE ACRODO COM A APARIÇÃO DO SINAL '-'
+                for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)//PERCORRE TODAS ELEIÇÕES CADASTRADAS
                 {
-                    frmGerencial.eleicao.setCodEleicao(i);
-                    frmCodigoSegurancacs frmCodigoSeguranca = new frmCodigoSegurancacs();
-                    frmCodigoSeguranca.ShowDialog();
-                    cbEleicoes.Items.Clear();//LIMPA A LISTA
-                    preencheComboBox();//PREENCHE A LISTA NOVAMENTE
+                    if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//CASO O CÓDIGO NA LISTA SEJA IGUAL AO CÓDIDO DA ELEIÇÃO RESCOLHIDA
+                    {
+                        frmGerencial.eleicao.setCodEleicao(i);
+                        frmCodigoSegurancacs frmCodigoSeguranca = new frmCodigoSegurancacs();
+                        frmCodigoSeguranca.ShowDialog();
+                        cbEleicoes.Items.Clear();//LIMPA A LISTA
+                        preencheComboBox();//PREENCHE A LISTA NOVAMENTE
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma eleição selecionada para ser finalizada!");
             }
         }
     }

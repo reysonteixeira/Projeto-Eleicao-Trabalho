@@ -11,20 +11,29 @@ using System.Threading;
 
 namespace Projeto_eleicao
 {
+    //##################################################################################################################################
+
+    //                                           FORMULÁRIO QUE FAZ O LOGIN PARA ACESSO
+
+    //##################################################################################################################################
+
     public partial class frmLogin : Form
     { 
-
+        //################################################ MÉTODOS AO CARREGAR FORMULÁRIO #################################################
+        
+        //----- MÉTODO CONSTRUTOR
         public frmLogin()
         {
             InitializeComponent();
         }
 
+        //----- MÉTODO RESPONSÁVEL POR LOGIN
         public void Login()
         {
-            if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")
+            if (txtUsuario.Text == "admin" && txtSenha.Text == "admin")//SE O LOGIN E SENHA CORRESPONDEREM
             {
                
-                frmGerencial frmGerencial = new frmGerencial();
+                frmGerencial frmGerencial = new frmGerencial();//ABRE A ELEIÇÃO
                 frmGerencial.ShowDialog();
                 this.Close();
             }
@@ -34,17 +43,19 @@ namespace Projeto_eleicao
             }
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            Login();
-        }
-
+        //----- FAZ A VERIFICAÇÃO SE FOI CLICADO ENTER
         private void frmLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar == 13)//CASO TECLE ENTER
             {
-                Login();
+                Login();//CHAMA FUNÇÃO QUE FAZ LOGIN
             }
+        }
+
+        //----- BOTÃO LOGIN
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Login();//CHAMA FUNÇÃO QUE FAZ LOGIN
         }
     }
 }

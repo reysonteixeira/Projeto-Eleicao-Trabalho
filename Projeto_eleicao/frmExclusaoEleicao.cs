@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace Projeto_eleicao
 {
+    //##################################################################################################################################
+
+    //                                  FORMULÁRIO QUE FAZ A EXCLUSÃO DE CADASRO DE ELEIÇÕES
+
+    //##################################################################################################################################
+
     public partial class frmExclusaoEleicao : Form
     {
         //##########################################  MÉTODOS AO CARREGAMENTO DE FORMULÁRIO  ###########################################
@@ -44,6 +50,10 @@ namespace Projeto_eleicao
                 dgvEleicao.Rows.Clear();//LIMPA TODA O DATA GRID VIEW
                 preencheDgv();//PREENCHE O DATA GRID VIEW
                 indice = -1;//VOLTA O ÍNDICE AO PADRÃO
+            }
+            else
+            {
+                MessageBox.Show("Não existe eleição selecionada para edição!");
             }
         }
 

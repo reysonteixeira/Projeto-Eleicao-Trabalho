@@ -8,19 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Projeto_eleicao
 {
+    //#################################################################################################################################
+
+    //                                              FORMULÁRIO QUE ABRE O CÓDIGO DE SEGURANÇA
+
+    //##################################################################################################################################
+
     public partial class frmCodigoSegurancacs : Form
     {
+        //####################################### MÉTODOS AO CARREGAR FORMULÁRIO #######################################################
+
+        //MÉTODO CONSTRUTOR
         public frmCodigoSegurancacs()
         {
             InitializeComponent();
         }
 
+
+        //##########################################  MÉTODOS QUE MANIPULAM ELEMENTOS DO CADASTRO  #####################################
+
+        //----- BOTÃO OK
         private void btnOk_Click(object sender, EventArgs e)
         {
+            //--- VERIFICA SE O CÓDIGO DE SEGURANÇA DA ELEIÇÃO É O MESMO CADASTRADO
             if (txtCodigo.Text == frmGerencial.eleicao.getCodigoSeguranca(frmGerencial.eleicao.getCodEleicao()))
             {
+                //--- VERIFICA A SITUAÇÃO DA ELEIÇÃO, CASO NÃO TENHA SIDO INICIADA
                 if (frmGerencial.eleicao.getSituacaoEleicao(frmGerencial.eleicao.getCodEleicao()) == 0)
                 {
                     frmGerencial.eleicao.restauraEleicao(frmGerencial.eleicao.getCodEleicao());//RETORNA OS DADOS DA ELEIÇÃO
@@ -28,8 +44,9 @@ namespace Projeto_eleicao
                     frmGerencial.eleicao.insereLista(frmGerencial.eleicao.getCodEleicao());//SALVA OS DADOS NA LISTA
                     this.Close();
                 }
-                else
+                else//--- SENÃO
                 {
+                    //--- VERIFICA A SITUAÇÃO DA ELEIÇÃO, CASO TENHA SIDO INICIADA
                     if (frmGerencial.eleicao.getSituacaoEleicao(frmGerencial.eleicao.getCodEleicao()) == 1)
                     {
                         frmGerencial.eleicao.restauraEleicao(frmGerencial.eleicao.getCodEleicao());//RETORNA OS DADOS DA ELEIÇÃO
@@ -38,8 +55,9 @@ namespace Projeto_eleicao
                         MessageBox.Show("Eleição encerrada com sucesso!");
                         this.Close();
                     }
-                    else
+                    else//SENÃO
                     {
+                        //--- VERIFICA A SITUAÇÃO DA ELEIÇÃO, CASO TENHA SIDO ENCERRADA 
                         if (frmGerencial.eleicao.getSituacaoEleicao(frmGerencial.eleicao.getCodEleicao()) == 2)
                         {
                             frmResulttados frmVerResultados = new frmResulttados();
