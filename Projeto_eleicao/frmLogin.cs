@@ -43,27 +43,29 @@ namespace Projeto_eleicao
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX USUÁRIO NÃO ESTÁ VAZIA
         private void txtUsuario_Validated(object sender, EventArgs e)
         {
             if (txtUsuario.Text.Trim() == "")
             {
-                epUsuario.SetError(txtUsuario, "Insira um nome de usuário");
+                epUsuario.SetError(txtUsuario, "Insira um nome de usuário"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epUsuario.Clear();
+                epUsuario.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX SENHA NÃO ESTÁ VAZIA
         private void txtSenha_Validated(object sender, EventArgs e)
         {
             if (txtSenha.Text.Trim() == "")
             {
-                epSenha.SetError(txtSenha, "Insira uma senha");
+                epSenha.SetError(txtSenha, "Insira uma senha"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epSenha.Clear();
+                epSenha.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
@@ -86,6 +88,7 @@ namespace Projeto_eleicao
         //----- BOTÃO LOGIN
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // ----- VERIFICA SE AMBOS OS CAMPOS, USUÁRIO E SENHA, ESTÃO PREENCHIDOS ANTES DE CHAMAR A FUNÇÃO LOGIN
             if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtSenha.Text))
             {
                 MessageBox.Show("Os campos Usuário e Senha devem ser preenchidos");

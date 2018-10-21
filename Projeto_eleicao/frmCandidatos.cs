@@ -126,6 +126,7 @@ namespace Projeto_eleicao
         //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // ----- VERIFICA SE O QUE FOI DIGITADO PELO USUÁRIO EM TODOS OS CAMPOS ATENDE A TODOS OS REQUISITOS ANTES DE SALVAR OS DADOS
             if (string.IsNullOrEmpty(txtNomeCompleto.Text) || string.IsNullOrEmpty(txtNomeAbreviado.Text) || string.IsNullOrEmpty(txtNascimento.Text) || string.IsNullOrEmpty(txtPartidoNum.Text) || string.IsNullOrEmpty(txtPartidoNome.Text) || string.IsNullOrWhiteSpace(foto))
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos");
@@ -168,63 +169,68 @@ namespace Projeto_eleicao
             this.Close();//FECHA A JANELA
         }
 
+        // ----- VERIFICA SE A TEXTBOX NOME COMPLETO NÃO ESTÁ VAZIA
         private void txtNomeCompleto_Validated(object sender, EventArgs e)
         {
             if (txtNomeCompleto.Text.Trim() == "")
             {
-                epNC.SetError(txtNomeCompleto, "Insira o nome completo do candidato");
+                epNC.SetError(txtNomeCompleto, "Insira o nome completo do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epNC.Clear();
+                epNC.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX NOME ABREVIADO NÃO ESTÁ VAZIA
         private void txtNomeAbreviado_Validated(object sender, EventArgs e)
         {
             if (txtNomeAbreviado.Text.Trim() == "")
             {
-                epNA.SetError(txtNomeAbreviado, "Insira o nome abreviado do candidato");
+                epNA.SetError(txtNomeAbreviado, "Insira o nome abreviado do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epNA.Clear();
+                epNA.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A MASKEDTEXTBOX DATA DE NASCIMENTO NÃO ESTÁ VAZIA
         private void txtNascimento_Validated(object sender, EventArgs e)
         {
             if (txtNascimento.Text.Trim() == "")
             {
-                epN.SetError(txtNascimento, "Insira a data de nascimento do candidato");
+                epN.SetError(txtNascimento, "Insira a data de nascimento do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epN.Clear();
+                epN.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX NÚMERO DO PARTIDO NÃO ESTÁ VAZIA
         private void txtPartidoNum_Validated(object sender, EventArgs e)
         {
             if (txtPartidoNum.Text.Trim() == "")
             {
-                epPNum.SetError(txtPartidoNum, "Insira o número do partido do candidato");
+                epPNum.SetError(txtPartidoNum, "Insira o número do partido do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epPNum.Clear();
+                epPNum.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX NOME DO PARTIDO NÃO ESTÁ VAZIA
         private void txtPartidoNome_Validated(object sender, EventArgs e)
         {
             if (txtPartidoNome.Text.Trim() == "")
             {
-                epPNome.SetError(txtPartidoNome, "Insira o nome do partido do candidato");
+                epPNome.SetError(txtPartidoNome, "Insira o nome do partido do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epPNome.Clear();
+                epPNome.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
     }

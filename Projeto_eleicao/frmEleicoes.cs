@@ -42,6 +42,22 @@ namespace Projeto_eleicao
             txtCodSeguranca.Clear();
         }
 
+        public bool NaoContemLetras(string texto)
+        {
+            if (texto.Where(c => char.IsLetter(c)).Count() <= 0)
+                return true;
+            else
+                return false;
+        }
+
+        public bool NaoContemNumeros(string texto)
+        {
+            if (texto.Where(c => char.IsNumber(c)).Count() <= 0)
+                return true;
+            else
+                return false;
+        }
+
         //----- HABILITA OU DESABILITA CAMPOS DO FORMULÁRIO PARA ENTRADA DE DADOS
         public void liberaCampos(bool valida)
         {
@@ -124,9 +140,10 @@ namespace Projeto_eleicao
         //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtTituloEleicao.Text) || string.IsNullOrEmpty(txtCodSeguranca.Text) || cbPaises.SelectedIndex == -1)
+            // ----- VERIFICA SE O QUE FOI DIGITADO PELO USUÁRIO EM TODOS OS CAMPOS ATENDE A TODOS OS REQUISITOS ANTES DE SALVAR OS DADOS
+            if (string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtTituloEleicao.Text) || string.IsNullOrEmpty(txtCodSeguranca.Text) || NaoContemLetras(txtCodSeguranca.Text) || NaoContemNumeros(txtCodSeguranca.Text) || txtCodSeguranca.Text.Length < 8 || cbPaises.SelectedIndex == -1)
             {
-                MessageBox.Show("Todos os campos devem ser preenchidos");
+                MessageBox.Show("Todos os campos devem ser preenchidos corretamente");
             }
             else
             {
@@ -259,51 +276,56 @@ namespace Projeto_eleicao
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX CÓDIGO DA ELEIÇÃO NÃO ESTÁ VAZIA
         private void txtCodigo_Validated(object sender, EventArgs e)
         {
             if (txtCodigo.Text.Trim() == "")
             {
-                epCE.SetError(txtCodigo, "Insira um código para a eleição");
+                epCE.SetError(txtCodigo, "Insira um código para a eleição"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epCE.Clear();
+                epCE.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX TÍTULO DA ELEIÇÃO NÃO ESTÁ VAZIA
         private void txtTituloEleicao_Validated(object sender, EventArgs e)
         {
             if (txtTituloEleicao.Text.Trim() == "")
             {
-                epTE.SetError(txtTituloEleicao, "Insira um título para a eleição");
+                epTE.SetError(txtTituloEleicao, "Insira um título para a eleição"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epTE.Clear();
+                epTE.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE A TEXTBOX CÓD. SEGURANÇA NÃO ESTÁ VAZIA
         private void txtCodSeguranca_Validated(object sender, EventArgs e)
         {
-            if (txtCodSeguranca.Text.Trim() == "")
+            // ----- VERIFICA SE O QUE FOI DIGITADO PELO USUÁRIO ATENDE A TODOS OS REQUISITOS DO CÓDIGO 
+            if (txtCodSeguranca.Text.Trim() == "" || NaoContemLetras(txtCodSeguranca.Text) || NaoContemNumeros(txtCodSeguranca.Text) || txtCodSeguranca.Text.Length < 8)
             {
-                epCS.SetError(txtCodSeguranca, "Insira um código de segurança para a eleição");
+                epCS.SetError(txtCodSeguranca, "Insira um código de segurança válido para a eleição.\nNo mínimo 8 dígitos, contendo letras e números."); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epCS.Clear();
+                epCS.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
 
+        // ----- VERIFICA SE FOI SELECIONADO ALGUM ELEMENTO NA COMBOBOX PAÍS
         private void cbPaises_Validated(object sender, EventArgs e)
         {
             if (cbPaises.SelectedIndex == -1)
             {
-                epP.SetError(cbPaises, "Selecione um país para a eleição");
+                epP.SetError(cbPaises, "Selecione um país para a eleição"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
-                epP.Clear();
+                epP.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
             }
         }
     }
