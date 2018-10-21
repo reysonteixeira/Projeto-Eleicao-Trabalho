@@ -63,6 +63,16 @@ namespace Projeto_eleicao.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ab2778fa_9895_4023_89d2_0a3ef119d875 {
+            get {
+                object obj = ResourceManager.GetObject("ab2778fa-9895-4023-89d2-0a3ef119d875", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
