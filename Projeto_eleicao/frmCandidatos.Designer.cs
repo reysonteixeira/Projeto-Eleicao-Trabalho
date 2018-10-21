@@ -54,7 +54,6 @@
             this.epN = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPNum = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPNome = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epFoto = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
@@ -63,7 +62,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.epN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPNome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNomeCompleto
@@ -98,6 +96,7 @@
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(88, 26);
             this.txtNascimento.TabIndex = 2;
+            this.txtNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtNascimento.Validated += new System.EventHandler(this.txtNascimento_Validated);
             // 
             // label1
@@ -229,7 +228,6 @@
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 7;
             this.pbFoto.TabStop = false;
-            this.pbFoto.Validated += new System.EventHandler(this.pbFoto_Validated);
             // 
             // btnSair
             // 
@@ -277,10 +275,6 @@
             // 
             this.epPNome.ContainerControl = this;
             // 
-            // epFoto
-            // 
-            this.epFoto.ContainerControl = this;
-            // 
             // frmCandidatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -317,7 +311,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.epN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epPNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,6 +342,5 @@
         private System.Windows.Forms.ErrorProvider epN;
         private System.Windows.Forms.ErrorProvider epPNum;
         private System.Windows.Forms.ErrorProvider epPNome;
-        private System.Windows.Forms.ErrorProvider epFoto;
     }
 }

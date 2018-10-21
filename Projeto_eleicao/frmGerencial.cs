@@ -29,10 +29,9 @@ namespace Projeto_eleicao
 
         private void btnSobre_Click(object sender, EventArgs e)
         {
-           
+            frmSobre frmAbout = new frmSobre();
+            frmAbout.ShowDialog();
         }
-
-      
 
         private void btnDocumentação_Click(object sender, EventArgs e)
         {

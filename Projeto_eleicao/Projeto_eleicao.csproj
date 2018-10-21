@@ -85,6 +85,12 @@
     <Compile Include="frmResultadoEleicao.Designer.cs">
       <DependentUpon>frmResultadoEleicao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSobre.Designer.cs">
+      <DependentUpon>frmSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTempo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmResultadoEleicao.resx">
       <DependentUpon>frmResultadoEleicao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSobre.resx">
+      <DependentUpon>frmSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTempo.resx">
       <DependentUpon>frmTempo.cs</DependentUpon>

@@ -25,6 +25,8 @@ namespace Projeto_eleicao
         {
             InitializeComponent();
         }
+
+        string foto = " ";
         
         //----- MÉTODO AO MOSTRAR O FORMULÁRIO
         private void frmCandidatos_Shown(object sender, EventArgs e)
@@ -124,17 +126,25 @@ namespace Projeto_eleicao
         //--- BOTÃO SALVAR
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            salvarCadastro();//MÉTODO QUE ENVIA OS DADOS E OS SALVA EM LISTA
-            btnNovo.Enabled = true;
-            btnSalvar.Enabled = false;
-            btnSelecionar.Enabled = false;
-            LiberaCampos(false);
-            pbFoto.Image = pbFoto.InitialImage;//O CAMPO DO FORMULÁRIO RECEBE A IMAGEM INICIAL
-            LimpaCampos();
-            if (frmGerencial.eleicao.getIndice() >= 0)//SE O CADASTRO FOR UMA ALTERAÇÃO
+            if (string.IsNullOrEmpty(txtNomeCompleto.Text) || string.IsNullOrEmpty(txtNomeAbreviado.Text) || string.IsNullOrEmpty(txtNascimento.Text) || string.IsNullOrEmpty(txtPartidoNum.Text) || string.IsNullOrEmpty(txtPartidoNome.Text) || string.IsNullOrWhiteSpace(foto))
             {
-                frmGerencial.eleicao.setIndice(-1);
-                this.Close();//FECHA A JANELA
+                MessageBox.Show("Todos os campos devem ser preenchidos");
+            }
+            else
+            {
+                salvarCadastro();//MÉTODO QUE ENVIA OS DADOS E OS SALVA EM LISTA
+                btnNovo.Enabled = true;
+                btnSalvar.Enabled = false;
+                btnSelecionar.Enabled = false;
+                LiberaCampos(false);
+                pbFoto.Image = pbFoto.InitialImage;//O CAMPO DO FORMULÁRIO RECEBE A IMAGEM INICIAL
+                foto = " ";
+                LimpaCampos();
+                if (frmGerencial.eleicao.getIndice() >= 0)//SE O CADASTRO FOR UMA ALTERAÇÃO
+                {
+                    frmGerencial.eleicao.setIndice(-1);
+                    this.Close();//FECHA A JANELA
+                }
             }
         }
 
@@ -147,6 +157,7 @@ namespace Projeto_eleicao
             {
                 //--- ATRIBUI A IMAGEM SELECIONADA AO CAMPO PICBOX
                 pbFoto.Load(openFileDialog1.FileName);
+                foto = openFileDialog1.FileName.ToString();
                 frmGerencial.eleicao.setFoto(openFileDialog1.FileName);//ENVIA O DIRETORIO DA IMAGEM PARA SER SALVO
             }
         }
@@ -214,18 +225,6 @@ namespace Projeto_eleicao
             else
             {
                 epPNome.Clear();
-            }
-        }
-
-        private void pbFoto_Validated(object sender, EventArgs e)
-        {
-            if (pbFoto.Text.Trim() == "openFileDialog1")
-            {
-                epFoto.SetError(pbFoto, "Insira uma foto do candidato");
-            }
-            else
-            {
-                epFoto.Clear();
             }
         }
     }

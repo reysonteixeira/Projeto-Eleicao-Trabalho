@@ -56,7 +56,7 @@ namespace Projeto_eleicao
         //----- BOTÃO ENCERRAR
         private void btnEncerrar_Click(object sender, EventArgs e)
         {
-            if (cbEleicoes.SelectedIndex > 0)//VERIRICA SE ALGUM ITEM FOI SELECIONADO NO COMBOBOX
+            if (cbEleicoes.SelectedIndex >= 0)//VERIRICA SE ALGUM ITEM FOI SELECIONADO NO COMBOBOX
             {
                 string[] eleicao = cbEleicoes.SelectedItem.ToString().Split('-');//QUEBRA A STRING CONTIDA NA COMBOBOX EM SUBSTRING DE ACRODO COM A APARIÇÃO DO SINAL '-'
                 for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)//PERCORRE TODAS ELEIÇÕES CADASTRADAS
