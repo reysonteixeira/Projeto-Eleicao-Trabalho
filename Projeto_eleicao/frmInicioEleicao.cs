@@ -77,42 +77,55 @@ namespace Projeto_eleicao
         //----- BOTÃO INICIAR
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+            if (cbEleicao.SelectedIndex >=0)
+            { 
             string[] eleicao = cbEleicao.SelectedItem.ToString().Split('-');//VARIÁVEL RECEBE A SUBSTRING REFERENTE AO CÓDIGO DA ELEIÇÃO
-            for(int i=0;i<frmGerencial.eleicao.getTamanhoEleicao();i++)
-            {
-                if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//VERIFICA SE O ITEM SELECIONA CORRESPONDE AO CADASTRO NA LISTA
+                for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)
                 {
-                    if (frmGerencial.eleicao.getDataEleicao(i).ToShortDateString() == DateTime.Now.ToShortDateString())
+                    if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//VERIFICA SE O ITEM SELECIONA CORRESPONDE AO CADASTRO NA LISTA
                     {
-                        frmGerencial.eleicao.setCodEleicao(i);
-                        frmCodigoSegurancacs codigoSeguranca = new frmCodigoSegurancacs();
-                        codigoSeguranca.ShowDialog();
-                        cbEleicao.Items.Clear();//LIMPA OS VALORES DO COMBOBOX
-                        rbIniciar.Checked = true;//RETORNA OS VALORES PARA A COMBOBOX
-                        frmVotacao frmVotacao = new frmVotacao();//ABRE O FORMULÁRIO PARA VOTAÇÃO
-                        frmVotacao.ShowDialog();
-                    }
-                    else
-                    {
-                        TimeSpan dias = (frmGerencial.eleicao.getDataEleicao(i).Date - DateTime.Now.Date);//RECEBE A QUANTIDADE DE DIAS ATÉ O INICIO
-                        MessageBox.Show("impossível iniciar eleição! Restam: " + dias.Days + " dias para poder iniciar!");
+                        if (frmGerencial.eleicao.getDataEleicao(i).ToShortDateString() == DateTime.Now.ToShortDateString())
+                        {
+                            frmGerencial.eleicao.setCodEleicao(i);
+                            frmCodigoSegurancacs codigoSeguranca = new frmCodigoSegurancacs();
+                            codigoSeguranca.ShowDialog();
+                            cbEleicao.Items.Clear();//LIMPA OS VALORES DO COMBOBOX
+                            rbIniciar.Checked = true;//RETORNA OS VALORES PARA A COMBOBOX
+
+                        }
+                        else
+                        {
+                            TimeSpan dias = (frmGerencial.eleicao.getDataEleicao(i).Date - DateTime.Now.Date);//RECEBE A QUANTIDADE DE DIAS ATÉ O INICIO
+                            MessageBox.Show("impossível iniciar eleição! Restam: " + dias.Days + " dias para poder iniciar!");
+                        }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Escolha uma eleição para iniciar!");
             }
         }
 
         //----- BOTÃO CONTINUAR
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            string[] eleicao = cbEleicao.SelectedItem.ToString().Split('-');//VARIÁVEL RECEBE A SUBSTRING REFERENTE AO CÓDIGO DA ELEIÇÃO
-            for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)
+            if (cbEleicao.SelectedIndex >= 0)
             {
-                if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//VERIFICA SE O ITEM SELECIONA CORRESPONDE AO CADASTRO NA LISTA
+                string[] eleicao = cbEleicao.SelectedItem.ToString().Split('-');//VARIÁVEL RECEBE A SUBSTRING REFERENTE AO CÓDIGO DA ELEIÇÃO
+                for (int i = 0; i < frmGerencial.eleicao.getTamanhoEleicao(); i++)
                 {
-                    frmGerencial.eleicao.setCodEleicao(i);//CONFIGURA A ELEIÇÃO QUE SERÁ VOTADA
-                    frmVotacao frmVotacao = new frmVotacao();//ABRE O FORMULÁRIO PARA VOTAÇÃO
-                    frmVotacao.ShowDialog();
+                    if (int.Parse(eleicao[0].ToString()) == frmGerencial.eleicao.getCodigo(i))//VERIFICA SE O ITEM SELECIONA CORRESPONDE AO CADASTRO NA LISTA
+                    {
+                        frmGerencial.eleicao.setCodEleicao(i);//CONFIGURA A ELEIÇÃO QUE SERÁ VOTADA
+                        frmVotacao frmVotacao = new frmVotacao();//ABRE O FORMULÁRIO PARA VOTAÇÃO
+                        frmVotacao.ShowDialog();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Escolha uma eleição para dar continuidade!");
             }
         }
     }

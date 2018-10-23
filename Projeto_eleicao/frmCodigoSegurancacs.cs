@@ -42,6 +42,8 @@ namespace Projeto_eleicao
                     frmGerencial.eleicao.restauraEleicao(frmGerencial.eleicao.getCodEleicao());//RETORNA OS DADOS DA ELEIÇÃO
                     frmGerencial.eleicao.setSituacaoEleicao(1);//ATUALIZA O VALOR DA SITUAÇÃO DA ELEIÇÃO PARA "1", QUE INDICARÁ QUE ESTÁ APTA A VOTAÇÃO
                     frmGerencial.eleicao.insereLista(frmGerencial.eleicao.getCodEleicao());//SALVA OS DADOS NA LISTA
+                    frmVotacao frmVotacao = new frmVotacao();//ABRE O FORMULÁRIO PARA VOTAÇÃO
+                    frmVotacao.ShowDialog();
                     this.Close();
                 }
                 else//--- SENÃO

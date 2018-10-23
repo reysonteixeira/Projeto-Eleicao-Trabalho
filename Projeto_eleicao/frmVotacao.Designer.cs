@@ -56,7 +56,7 @@
             // 
             this.lblCandidato.AutoSize = true;
             this.lblCandidato.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCandidato.Location = new System.Drawing.Point(130, 432);
+            this.lblCandidato.Location = new System.Drawing.Point(132, 471);
             this.lblCandidato.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCandidato.Name = "lblCandidato";
             this.lblCandidato.Size = new System.Drawing.Size(85, 29);
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 439);
+            this.label2.Location = new System.Drawing.Point(48, 478);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
@@ -228,7 +228,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 472);
+            this.label4.Location = new System.Drawing.Point(62, 443);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 20);
@@ -239,7 +239,7 @@
             // 
             this.lblPartido.AutoSize = true;
             this.lblPartido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPartido.Location = new System.Drawing.Point(117, 469);
+            this.lblPartido.Location = new System.Drawing.Point(133, 440);
             this.lblPartido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPartido.Name = "lblPartido";
             this.lblPartido.Size = new System.Drawing.Size(66, 24);

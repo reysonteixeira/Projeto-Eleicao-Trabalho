@@ -156,7 +156,7 @@
             this.txtPartidoNome.Enabled = false;
             this.txtPartidoNome.Location = new System.Drawing.Point(90, 66);
             this.txtPartidoNome.Name = "txtPartidoNome";
-            this.txtPartidoNome.Size = new System.Drawing.Size(194, 26);
+            this.txtPartidoNome.Size = new System.Drawing.Size(164, 26);
             this.txtPartidoNome.TabIndex = 3;
             this.txtPartidoNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartidoNome_KeyPress);
             this.txtPartidoNome.Validated += new System.EventHandler(this.txtPartidoNome_Validated);
