@@ -281,7 +281,7 @@ namespace Projeto_eleicao
         {
             if (txtCodigo.Text.Trim() == "")
             {
-                epCE.SetError(txtCodigo, "Insira um código para a eleição"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
+                epCE.SetError(txtCodigo, "Insira um código válido para a eleição"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
             else
             {
@@ -326,6 +326,14 @@ namespace Projeto_eleicao
             else
             {
                 epP.Clear(); // ----- SE O CAMPO ESTIVER PREENCHIDO A MENSAGEM DE ERRO NÃO APARECERÁ
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -73,6 +73,7 @@
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(409, 26);
             this.txtNomeCompleto.TabIndex = 0;
+            this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             this.txtNomeCompleto.Validated += new System.EventHandler(this.txtNomeCompleto_Validated);
             // 
             // txtNomeAbreviado
@@ -84,6 +85,7 @@
             this.txtNomeAbreviado.Name = "txtNomeAbreviado";
             this.txtNomeAbreviado.Size = new System.Drawing.Size(184, 26);
             this.txtNomeAbreviado.TabIndex = 1;
+            this.txtNomeAbreviado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeAbreviado_KeyPress);
             this.txtNomeAbreviado.Validated += new System.EventHandler(this.txtNomeAbreviado_Validated);
             // 
             // txtNascimento
@@ -156,6 +158,7 @@
             this.txtPartidoNome.Name = "txtPartidoNome";
             this.txtPartidoNome.Size = new System.Drawing.Size(194, 26);
             this.txtPartidoNome.TabIndex = 3;
+            this.txtPartidoNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartidoNome_KeyPress);
             this.txtPartidoNome.Validated += new System.EventHandler(this.txtPartidoNome_Validated);
             // 
             // txtPartidoNum
@@ -165,6 +168,7 @@
             this.txtPartidoNum.Name = "txtPartidoNum";
             this.txtPartidoNum.Size = new System.Drawing.Size(60, 26);
             this.txtPartidoNum.TabIndex = 2;
+            this.txtPartidoNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartidoNum_KeyPress);
             this.txtPartidoNum.Validated += new System.EventHandler(this.txtPartidoNum_Validated);
             // 
             // label6

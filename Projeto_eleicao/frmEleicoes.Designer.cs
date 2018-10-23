@@ -237,6 +237,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 26);
             this.txtCodigo.TabIndex = 49;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Validated += new System.EventHandler(this.txtCodigo_Validated);
             // 
             // txtCodSeguranca
