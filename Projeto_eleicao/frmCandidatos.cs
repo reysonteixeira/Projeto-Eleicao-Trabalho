@@ -127,9 +127,9 @@ namespace Projeto_eleicao
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             // ----- VERIFICA SE O QUE FOI DIGITADO PELO USUÁRIO EM TODOS OS CAMPOS ATENDE A TODOS OS REQUISITOS ANTES DE SALVAR OS DADOS
-            if (string.IsNullOrEmpty(txtNomeCompleto.Text) || string.IsNullOrEmpty(txtNomeAbreviado.Text) || string.IsNullOrEmpty(txtNascimento.Text) || string.IsNullOrEmpty(txtPartidoNum.Text) || string.IsNullOrEmpty(txtPartidoNome.Text) || string.IsNullOrWhiteSpace(foto))
+            if (string.IsNullOrEmpty(txtNomeCompleto.Text) || string.IsNullOrEmpty(txtNomeAbreviado.Text) || string.IsNullOrEmpty(txtNascimento.Text) || txtNascimento.Text.Length < 8 || string.IsNullOrEmpty(txtPartidoNum.Text) || string.IsNullOrEmpty(txtPartidoNome.Text) || string.IsNullOrWhiteSpace(foto))
             {
-                MessageBox.Show("Todos os campos devem ser preenchidos");
+                MessageBox.Show("Todos os campos devem ser preenchidos corretamente");
             }
             else
             {
@@ -198,7 +198,7 @@ namespace Projeto_eleicao
         // ----- VERIFICA SE A MASKEDTEXTBOX DATA DE NASCIMENTO NÃO ESTÁ VAZIA
         private void txtNascimento_Validated(object sender, EventArgs e)
         {
-            if (txtNascimento.Text.Trim() == "")
+            if (txtNascimento.Text.Trim() == "" || txtNascimento.Text.Length < 8)
             {
                 epN.SetError(txtNascimento, "Insira a data de nascimento do candidato"); // ----- SE O CAMPO ESTIVER VAZIO, EXIBE UMA MENSAGEM DE ERRO
             }
@@ -245,7 +245,7 @@ namespace Projeto_eleicao
 
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar)))
+            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))
             {
                 e.Handled = true;
             }
@@ -253,7 +253,7 @@ namespace Projeto_eleicao
 
         private void txtNomeAbreviado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar)))
+            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))
             {
                 e.Handled = true;
             }

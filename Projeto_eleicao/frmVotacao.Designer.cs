@@ -72,6 +72,7 @@
             this.txtVoto.Name = "txtVoto";
             this.txtVoto.Size = new System.Drawing.Size(287, 47);
             this.txtVoto.TabIndex = 2;
+            this.txtVoto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVoto_KeyPress);
             // 
             // label2
             // 
