@@ -72,7 +72,7 @@
             this.txtNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(409, 26);
-            this.txtNomeCompleto.TabIndex = 0;
+            this.txtNomeCompleto.TabIndex = 1;
             this.txtNomeCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeCompleto_KeyPress);
             this.txtNomeCompleto.Validated += new System.EventHandler(this.txtNomeCompleto_Validated);
             // 

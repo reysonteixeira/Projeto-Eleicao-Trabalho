@@ -35,6 +35,8 @@
             this.encerrarEleiçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentaçãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEncerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnFechar = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@
             this.btnDocumentação = new System.Windows.Forms.Button();
             this.btnSobre = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.documentaçãoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sobreToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,24 +70,28 @@
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
             // iniciarEleiçãoToolStripMenuItem
             // 
             this.iniciarEleiçãoToolStripMenuItem.Name = "iniciarEleiçãoToolStripMenuItem";
             this.iniciarEleiçãoToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.iniciarEleiçãoToolStripMenuItem.Text = "Iniciar Eleição";
+            this.iniciarEleiçãoToolStripMenuItem.Click += new System.EventHandler(this.iniciarEleiçãoToolStripMenuItem_Click);
             // 
             // encerrarEleiçãoToolStripMenuItem
             // 
             this.encerrarEleiçãoToolStripMenuItem.Name = "encerrarEleiçãoToolStripMenuItem";
             this.encerrarEleiçãoToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             this.encerrarEleiçãoToolStripMenuItem.Text = "Encerrar Eleição";
+            this.encerrarEleiçãoToolStripMenuItem.Click += new System.EventHandler(this.encerrarEleiçãoToolStripMenuItem_Click);
             // 
             // resultadosToolStripMenuItem
             // 
             this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
             this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.resultadosToolStripMenuItem.Text = "Resultados";
+            this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.resultadosToolStripMenuItem_Click);
             // 
             // documentaçãoToolStripMenuItem
             // 
@@ -97,6 +101,19 @@
             this.documentaçãoToolStripMenuItem.Name = "documentaçãoToolStripMenuItem";
             this.documentaçãoToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.documentaçãoToolStripMenuItem.Text = "Ajuda";
+            // 
+            // documentaçãoToolStripMenuItem1
+            // 
+            this.documentaçãoToolStripMenuItem1.Name = "documentaçãoToolStripMenuItem1";
+            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.documentaçãoToolStripMenuItem1.Text = "Documentação";
+            // 
+            // sobreToolStripMenuItem1
+            // 
+            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.sobreToolStripMenuItem1.Text = "Sobre";
+            this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
             // tsmEncerrar
             // 
@@ -212,18 +229,6 @@
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // documentaçãoToolStripMenuItem1
-            // 
-            this.documentaçãoToolStripMenuItem1.Name = "documentaçãoToolStripMenuItem1";
-            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.documentaçãoToolStripMenuItem1.Text = "Documentação";
-            // 
-            // sobreToolStripMenuItem1
-            // 
-            this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.sobreToolStripMenuItem1.Text = "Sobre";
             // 
             // frmGerencial
             // 

@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmResulttados));
             this.lbVotacao = new System.Windows.Forms.ListBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pbDescricao = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNomeCandidato = new System.Windows.Forms.Label();
             this.lblPartido = new System.Windows.Forms.Label();
@@ -41,9 +39,6 @@
             this.lblContagemVotos = new System.Windows.Forms.Label();
             this.lblTituloEleicao = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pb2Turno1 = new System.Windows.Forms.PictureBox();
-            this.pb2Turno2 = new System.Windows.Forms.PictureBox();
-            this.pb1Turno = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblVotos = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,11 +55,17 @@
             this.lblVotosValidos = new System.Windows.Forms.Label();
             this.lblBrancos = new System.Windows.Forms.Label();
             this.lblNulos = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno2)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pb1Turno = new System.Windows.Forms.PictureBox();
+            this.pb2Turno2 = new System.Windows.Forms.PictureBox();
+            this.pb2Turno1 = new System.Windows.Forms.PictureBox();
+            this.pbDescricao = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb1Turno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // lbVotacao
@@ -79,25 +80,6 @@
             this.lbVotacao.Size = new System.Drawing.Size(325, 544);
             this.lbVotacao.TabIndex = 0;
             this.lbVotacao.SelectedIndexChanged += new System.EventHandler(this.lbVotacao_SelectedIndexChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(1406, 163);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(369, 435);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pbDescricao
-            // 
-            this.pbDescricao.Location = new System.Drawing.Point(404, 117);
-            this.pbDescricao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pbDescricao.Name = "pbDescricao";
-            this.pbDescricao.Size = new System.Drawing.Size(264, 358);
-            this.pbDescricao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDescricao.TabIndex = 4;
-            this.pbDescricao.TabStop = false;
             // 
             // label1
             // 
@@ -185,36 +167,6 @@
             this.label3.Size = new System.Drawing.Size(140, 20);
             this.label3.TabIndex = 16;
             this.label3.Text = "Resultado Final:";
-            // 
-            // pb2Turno1
-            // 
-            this.pb2Turno1.Location = new System.Drawing.Point(739, 139);
-            this.pb2Turno1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pb2Turno1.Name = "pb2Turno1";
-            this.pb2Turno1.Size = new System.Drawing.Size(229, 298);
-            this.pb2Turno1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb2Turno1.TabIndex = 17;
-            this.pb2Turno1.TabStop = false;
-            // 
-            // pb2Turno2
-            // 
-            this.pb2Turno2.Location = new System.Drawing.Point(996, 139);
-            this.pb2Turno2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pb2Turno2.Name = "pb2Turno2";
-            this.pb2Turno2.Size = new System.Drawing.Size(229, 298);
-            this.pb2Turno2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb2Turno2.TabIndex = 18;
-            this.pb2Turno2.TabStop = false;
-            // 
-            // pb1Turno
-            // 
-            this.pb1Turno.Location = new System.Drawing.Point(869, 139);
-            this.pb1Turno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pb1Turno.Name = "pb1Turno";
-            this.pb1Turno.Size = new System.Drawing.Size(229, 298);
-            this.pb1Turno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb1Turno.TabIndex = 19;
-            this.pb1Turno.TabStop = false;
             // 
             // label7
             // 
@@ -368,11 +320,73 @@
             this.lblNulos.TabIndex = 35;
             this.lblNulos.Text = "label15";
             // 
+            // button1
+            // 
+            this.button1.Image = global::Projeto_eleicao.Properties.Resources.door21;
+            this.button1.Location = new System.Drawing.Point(1110, 663);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 40);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Fechar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pb1Turno
+            // 
+            this.pb1Turno.Location = new System.Drawing.Point(869, 139);
+            this.pb1Turno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pb1Turno.Name = "pb1Turno";
+            this.pb1Turno.Size = new System.Drawing.Size(229, 298);
+            this.pb1Turno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb1Turno.TabIndex = 19;
+            this.pb1Turno.TabStop = false;
+            // 
+            // pb2Turno2
+            // 
+            this.pb2Turno2.Location = new System.Drawing.Point(996, 139);
+            this.pb2Turno2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pb2Turno2.Name = "pb2Turno2";
+            this.pb2Turno2.Size = new System.Drawing.Size(229, 298);
+            this.pb2Turno2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb2Turno2.TabIndex = 18;
+            this.pb2Turno2.TabStop = false;
+            // 
+            // pb2Turno1
+            // 
+            this.pb2Turno1.Location = new System.Drawing.Point(739, 139);
+            this.pb2Turno1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pb2Turno1.Name = "pb2Turno1";
+            this.pb2Turno1.Size = new System.Drawing.Size(229, 298);
+            this.pb2Turno1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb2Turno1.TabIndex = 17;
+            this.pb2Turno1.TabStop = false;
+            // 
+            // pbDescricao
+            // 
+            this.pbDescricao.Location = new System.Drawing.Point(404, 117);
+            this.pbDescricao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbDescricao.Name = "pbDescricao";
+            this.pbDescricao.Size = new System.Drawing.Size(264, 358);
+            this.pbDescricao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDescricao.TabIndex = 4;
+            this.pbDescricao.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(1406, 163);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(369, 435);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
             // frmResulttados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 729);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblNulos);
             this.Controls.Add(this.lblBrancos);
             this.Controls.Add(this.lblVotosValidos);
@@ -411,11 +425,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Urna Eletrônica - Resultados Eleições";
             this.Shown += new System.EventHandler(this.frmResulttados_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb1Turno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2Turno1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDescricao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,5 +467,6 @@
         private System.Windows.Forms.Label lblVotosValidos;
         private System.Windows.Forms.Label lblBrancos;
         private System.Windows.Forms.Label lblNulos;
+        private System.Windows.Forms.Button button1;
     }
 }

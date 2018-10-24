@@ -49,6 +49,7 @@
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(50, 71);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.PasswordChar = '*';
             this.txtCodigo.Size = new System.Drawing.Size(272, 29);
             this.txtCodigo.TabIndex = 1;
             // 

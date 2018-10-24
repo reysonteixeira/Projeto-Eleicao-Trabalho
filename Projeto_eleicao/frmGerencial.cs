@@ -81,5 +81,35 @@ namespace Projeto_eleicao
         {
 
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEleicoes frmEleicoes = new frmEleicoes();
+            frmEleicoes.ShowDialog();
+        }
+
+        private void iniciarEleiçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInicioEleicao frmIniciaEleicao = new frmInicioEleicao();
+            frmIniciaEleicao.ShowDialog();
+        }
+
+        private void encerrarEleiçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEncerrar frmEncerra = new frmEncerrar();
+            frmEncerra.ShowDialog();
+        }
+
+        private void resultadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmResultadoEleicao frmResultado = new frmResultadoEleicao();
+            frmResultado.ShowDialog();
+        }
+
+        private void sobreToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSobre frmAbout = new frmSobre();
+            frmAbout.ShowDialog();
+        }
     }
 }
