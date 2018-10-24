@@ -51,7 +51,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(246, 24);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Urna Eletrônica Mercosul";
             // 
             // btnLogin
@@ -59,7 +59,7 @@
             this.btnLogin.Location = new System.Drawing.Point(257, 188);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(110, 44);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -69,7 +69,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(249, 94);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(118, 26);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.Validated += new System.EventHandler(this.txtUsuario_Validated);
             // 
             // label2
@@ -87,7 +87,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(118, 26);
-            this.txtSenha.TabIndex = 4;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.Validated += new System.EventHandler(this.txtSenha_Validated);
             // 
             // label3
@@ -96,7 +96,7 @@
             this.label3.Location = new System.Drawing.Point(171, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 20);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Senha:";
             // 
             // pictureBox1

@@ -62,7 +62,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // cadastrarToolStripMenuItem
@@ -105,13 +105,13 @@
             // documentaçãoToolStripMenuItem1
             // 
             this.documentaçãoToolStripMenuItem1.Name = "documentaçãoToolStripMenuItem1";
-            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
             this.documentaçãoToolStripMenuItem1.Text = "Documentação";
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
@@ -139,7 +139,7 @@
             this.btnFechar.Location = new System.Drawing.Point(573, 146);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(133, 107);
-            this.btnFechar.TabIndex = 8;
+            this.btnFechar.TabIndex = 6;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -153,7 +153,7 @@
             this.btnIniciar.Location = new System.Drawing.Point(247, 146);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(133, 107);
-            this.btnIniciar.TabIndex = 7;
+            this.btnIniciar.TabIndex = 1;
             this.btnIniciar.Text = "Iniciar Eleição";
             this.btnIniciar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnIniciar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -167,7 +167,7 @@
             this.btnEncerrar.Location = new System.Drawing.Point(247, 285);
             this.btnEncerrar.Name = "btnEncerrar";
             this.btnEncerrar.Size = new System.Drawing.Size(133, 107);
-            this.btnEncerrar.TabIndex = 6;
+            this.btnEncerrar.TabIndex = 2;
             this.btnEncerrar.Text = "Encerrar Eleição";
             this.btnEncerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEncerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -181,7 +181,7 @@
             this.btnResultados.Location = new System.Drawing.Point(79, 285);
             this.btnResultados.Name = "btnResultados";
             this.btnResultados.Size = new System.Drawing.Size(133, 107);
-            this.btnResultados.TabIndex = 5;
+            this.btnResultados.TabIndex = 3;
             this.btnResultados.Text = "Resultados";
             this.btnResultados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnResultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -209,7 +209,7 @@
             this.btnSobre.Location = new System.Drawing.Point(413, 285);
             this.btnSobre.Name = "btnSobre";
             this.btnSobre.Size = new System.Drawing.Size(133, 107);
-            this.btnSobre.TabIndex = 3;
+            this.btnSobre.TabIndex = 5;
             this.btnSobre.Text = "Sobre";
             this.btnSobre.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSobre.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -223,7 +223,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(79, 146);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(133, 107);
-            this.btnCadastrar.TabIndex = 2;
+            this.btnCadastrar.TabIndex = 0;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
