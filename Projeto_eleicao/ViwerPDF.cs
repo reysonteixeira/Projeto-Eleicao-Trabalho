@@ -10,20 +10,26 @@ using System.Windows.Forms;
 
 namespace Projeto_eleicao
 {
+    //##################################################################################################################################
+
+    //                                                     ABRE A DOCUMENTAÇÃO
+
+    //##################################################################################################################################
+
     public partial class ViwerPDF : Form
     {   
-        //INICIALIZA FORM E CARREGA O ARQUIVO PDF
+        //----- INICIALIZA FORM E CARREGA O ARQUIVO PDF
         public ViwerPDF()
         {
             InitializeComponent();
-            axAcroPDF1.LoadFile("../../Docs/MANUAL DE INSTRUÇÕES URNA ELETRÔNICA MERCOSUL.pdf");
+            axAcroPDF1.LoadFile("../../Docs/MANUAL DE INSTRUÇÕES URNA ELETRÔNICA MERCOSUL.pdf");//BUSCA ARQUIVO PDF NA BASE LOCAL
         }
 
-        //AO FECHAR FORM ENCERRAR PROCESSO DO ADOBE
+        //----- AO FECHAR FORM ENCERRAR PROCESSO DO ADOBE
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-            axAcroPDF1.Dispose();
+            base.OnFormClosing(e);//FECHA CONEXÃO COM O ARQUIVO
+            axAcroPDF1.Dispose();//FAZ A LIBERAÇÃO DE RECURSOS DO MÉTODO QUE ABRE O PDF
         }
     }
 }

@@ -58,7 +58,7 @@
             this.btnResultado.Location = new System.Drawing.Point(1012, 637);
             this.btnResultado.Name = "btnResultado";
             this.btnResultado.Size = new System.Drawing.Size(179, 49);
-            this.btnResultado.TabIndex = 0;
+            this.btnResultado.TabIndex = 5;
             this.btnResultado.Text = "Mostrar Resultados";
             this.btnResultado.UseVisualStyleBackColor = false;
             this.btnResultado.Click += new System.EventHandler(this.btnResultado_Click);
@@ -80,7 +80,8 @@
             this.dgvEleicao.ReadOnly = true;
             this.dgvEleicao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEleicao.Size = new System.Drawing.Size(1106, 474);
-            this.dgvEleicao.TabIndex = 3;
+            this.dgvEleicao.TabIndex = 4;
+            this.dgvEleicao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEleicao_CellClick);
             // 
             // Código
             // 
@@ -121,7 +122,7 @@
             this.cbSituacao.Location = new System.Drawing.Point(328, 76);
             this.cbSituacao.Name = "cbSituacao";
             this.cbSituacao.Size = new System.Drawing.Size(218, 28);
-            this.cbSituacao.TabIndex = 4;
+            this.cbSituacao.TabIndex = 1;
             // 
             // groupBox1
             // 
@@ -130,7 +131,7 @@
             this.groupBox1.Location = new System.Drawing.Point(85, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(201, 97);
-            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
             // 
@@ -165,7 +166,7 @@
             this.dtpInicio.Location = new System.Drawing.Point(35, 55);
             this.dtpInicio.Name = "dtpInicio";
             this.dtpInicio.Size = new System.Drawing.Size(151, 26);
-            this.dtpInicio.TabIndex = 6;
+            this.dtpInicio.TabIndex = 0;
             // 
             // label1
             // 
@@ -173,7 +174,7 @@
             this.label1.Location = new System.Drawing.Point(324, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 20);
-            this.label1.TabIndex = 8;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Situação:";
             // 
             // groupBox2
@@ -185,7 +186,7 @@
             this.groupBox2.Location = new System.Drawing.Point(591, 25);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(442, 100);
-            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Intervalo";
             // 
@@ -196,7 +197,7 @@
             this.dtpFim.Location = new System.Drawing.Point(256, 55);
             this.dtpFim.Name = "dtpFim";
             this.dtpFim.Size = new System.Drawing.Size(151, 26);
-            this.dtpFim.TabIndex = 10;
+            this.dtpFim.TabIndex = 1;
             // 
             // label3
             // 
@@ -224,7 +225,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(1062, 65);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(129, 48);
-            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.TabIndex = 3;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFiltrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

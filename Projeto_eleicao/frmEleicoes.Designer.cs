@@ -85,7 +85,7 @@
             this.cbPaises.Location = new System.Drawing.Point(169, 190);
             this.cbPaises.Name = "cbPaises";
             this.cbPaises.Size = new System.Drawing.Size(153, 28);
-            this.cbPaises.TabIndex = 47;
+            this.cbPaises.TabIndex = 6;
             this.cbPaises.Validated += new System.EventHandler(this.cbPaises_Validated);
             // 
             // label4
@@ -104,7 +104,7 @@
             this.dtpDataEleicao.Location = new System.Drawing.Point(539, 93);
             this.dtpDataEleicao.Name = "dtpDataEleicao";
             this.dtpDataEleicao.Size = new System.Drawing.Size(125, 26);
-            this.dtpDataEleicao.TabIndex = 45;
+            this.dtpDataEleicao.TabIndex = 4;
             // 
             // label3
             // 
@@ -142,7 +142,7 @@
             this.txtTituloEleicao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTituloEleicao.Name = "txtTituloEleicao";
             this.txtTituloEleicao.Size = new System.Drawing.Size(410, 26);
-            this.txtTituloEleicao.TabIndex = 35;
+            this.txtTituloEleicao.TabIndex = 5;
             this.txtTituloEleicao.Validated += new System.EventHandler(this.txtTituloEleicao_Validated);
             // 
             // groupBox1
@@ -156,7 +156,7 @@
             this.groupBox1.Location = new System.Drawing.Point(124, 235);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(540, 110);
-            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Candidatos";
             // 
@@ -166,7 +166,7 @@
             this.label6.Location = new System.Drawing.Point(110, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 20);
-            this.label6.TabIndex = 8;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Cadastrados:";
             // 
             // btnEditar
@@ -176,7 +176,7 @@
             this.btnEditar.Location = new System.Drawing.Point(216, 71);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(99, 33);
-            this.btnEditar.TabIndex = 7;
+            this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -199,7 +199,7 @@
             this.btnRemover.Location = new System.Drawing.Point(331, 71);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(109, 33);
-            this.btnRemover.TabIndex = 5;
+            this.btnRemover.TabIndex = 3;
             this.btnRemover.Text = "Remover";
             this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -213,7 +213,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(99, 71);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(99, 33);
-            this.btnAdicionar.TabIndex = 3;
+            this.btnAdicionar.TabIndex = 1;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -228,7 +228,7 @@
             this.cbCandidatos.Location = new System.Drawing.Point(99, 37);
             this.cbCandidatos.Name = "cbCandidatos";
             this.cbCandidatos.Size = new System.Drawing.Size(341, 28);
-            this.cbCandidatos.TabIndex = 2;
+            this.cbCandidatos.TabIndex = 0;
             // 
             // txtCodigo
             // 
@@ -236,7 +236,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(266, 95);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(108, 26);
-            this.txtCodigo.TabIndex = 49;
+            this.txtCodigo.TabIndex = 3;
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Validated += new System.EventHandler(this.txtCodigo_Validated);
             // 
@@ -246,7 +246,7 @@
             this.txtCodSeguranca.Location = new System.Drawing.Point(499, 190);
             this.txtCodSeguranca.Name = "txtCodSeguranca";
             this.txtCodSeguranca.Size = new System.Drawing.Size(165, 26);
-            this.txtCodSeguranca.TabIndex = 50;
+            this.txtCodSeguranca.TabIndex = 7;
             this.txtCodSeguranca.Validated += new System.EventHandler(this.txtCodSeguranca_Validated);
             // 
             // label5
@@ -264,7 +264,7 @@
             this.btnSair.Location = new System.Drawing.Point(542, 351);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(122, 43);
-            this.btnSair.TabIndex = 44;
+            this.btnSair.TabIndex = 11;
             this.btnSair.Text = "Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -278,7 +278,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(124, 351);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(122, 43);
-            this.btnCancelar.TabIndex = 43;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -291,7 +291,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(561, 25);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(103, 38);
-            this.btnExcluir.TabIndex = 42;
+            this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -304,7 +304,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(437, 25);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(103, 38);
-            this.btnAlterar.TabIndex = 41;
+            this.btnAlterar.TabIndex = 1;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAlterar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -317,7 +317,7 @@
             this.btnNovo.Location = new System.Drawing.Point(315, 25);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(103, 38);
-            this.btnNovo.TabIndex = 40;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "Nova";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -331,7 +331,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(124, 25);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(103, 38);
-            this.btnSalvar.TabIndex = 39;
+            this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

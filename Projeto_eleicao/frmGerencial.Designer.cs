@@ -105,13 +105,14 @@
             // documentaçãoToolStripMenuItem1
             // 
             this.documentaçãoToolStripMenuItem1.Name = "documentaçãoToolStripMenuItem1";
-            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.documentaçãoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.documentaçãoToolStripMenuItem1.Text = "Documentação";
+            this.documentaçãoToolStripMenuItem1.Click += new System.EventHandler(this.documentaçãoToolStripMenuItem1_Click);
             // 
             // sobreToolStripMenuItem1
             // 
             this.sobreToolStripMenuItem1.Name = "sobreToolStripMenuItem1";
-            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.sobreToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.sobreToolStripMenuItem1.Text = "Sobre";
             this.sobreToolStripMenuItem1.Click += new System.EventHandler(this.sobreToolStripMenuItem1_Click);
             // 
@@ -252,7 +253,6 @@
             this.Name = "frmGerencial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Urna Eletrônica Mercosul";
-            this.Load += new System.EventHandler(this.frmGerencial_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

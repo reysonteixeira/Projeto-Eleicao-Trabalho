@@ -32,6 +32,8 @@ namespace Projeto_eleicao
             preencheDataGridView(1);
         }
 
+        private int indice = -1;
+
 
         //########################################  MÉTODOS QUE FAZ MANIPUALAÇÃO COM ELEMENTOS DO FORMULÁRIO  ###########################
         
@@ -139,27 +141,33 @@ namespace Projeto_eleicao
         }
 
 
-        //####################################### MÉTODOS DE MANIPULAÇÃO COM DADOS DA ELEIÇÃO  ###########################################
+        //#######################################  MÉTODOS DE MANIPULAÇÃO COM DADOS DA ELEIÇÃO  ###########################################
 
         //----- BOTÃO RESULTADO
         private void btnResultado_Click(object sender, EventArgs e)
         {
-            int indice = dgvEleicao.CurrentRow.Index;//VARIÁVEL QUE RECEBE O INDICE DA LINHA CLICADA
-            for (int k = 0; k < frmGerencial.eleicao.getTamanhoEleicao(); k++)//PERCORRE A LISTA DE ELEIÇÕES
-            {
-                if (int.Parse(dgvEleicao[0, indice].Value.ToString()) == frmGerencial.eleicao.getCodigo(k))//VERIFICA SE O CÓDIGO DA DATA GRID VIEW É IGUAL AO CÓDIGO CADASTRADO
+            if(indice >=0)//VERIFICA SE ALGUMA ELEIÇÃO FOI SELECIONADA
+            { 
+                for (int k = 0; k < frmGerencial.eleicao.getTamanhoEleicao(); k++)//PERCORRE A LISTA DE ELEIÇÕES
                 {
-                    if (dgvEleicao[3, indice].Value.ToString() == "Encerrada")//VERIFICA SE A STIUAÇÃO DA ELEIÇÃO ESTÁ ENCERRADA
+                    if (int.Parse(dgvEleicao[0, indice].Value.ToString()) == frmGerencial.eleicao.getCodigo(k))//VERIFICA SE O CÓDIGO DA DATA GRID VIEW É IGUAL AO CÓDIGO CADASTRADO
                     {
-                        frmGerencial.eleicao.setCodEleicao(k);//CONFIGURA O CODELEIÇÃO COM O CÓDIGO DA ELEIÇÃO QUE FOI CLICADA
-                        frmCodigoSegurancacs frmCodigoSeg = new frmCodigoSegurancacs();//ABRE A TELA DE VERIFICAÇÃO DE CÓDIGO
-                        frmCodigoSeg.ShowDialog();
+                        if (dgvEleicao[3, indice].Value.ToString() == "Encerrada")//VERIFICA SE A STIUAÇÃO DA ELEIÇÃO ESTÁ ENCERRADA
+                        {
+                            frmGerencial.eleicao.setCodEleicao(k);//CONFIGURA O CODELEIÇÃO COM O CÓDIGO DA ELEIÇÃO QUE FOI CLICADA
+                            frmCodigoSegurancacs frmCodigoSeg = new frmCodigoSegurancacs();//ABRE A TELA DE VERIFICAÇÃO DE CÓDIGO
+                            frmCodigoSeg.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Apenas eleições encerradas podem ter resultados exibidos!");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Apenas eleições encerradas podem ter resultados exibidos!");
-                    }
-                }         
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma eleição para ver o resultado!");
             }
         }
 
@@ -168,6 +176,7 @@ namespace Projeto_eleicao
         {
             if(rbData.Checked)//SE ESTIVER MARCADO O RADIO BUTTON DATA
             {
+                indice = -1;//VOLTA POSIÇÃO DE ESCOLHA PARA -1
                 cbSituacao.Enabled = false;//TRAVA O COMBOBOX DE SITUAÇÃO
                 dtpInicio.Enabled = true;//LIBERA O CAMPO DE DATAS
                 dtpFim.Enabled = true;//LIBERA O CAMPO DE DATAS
@@ -179,6 +188,7 @@ namespace Projeto_eleicao
         {
             if(rbSituacao.Checked)//SE ESTIVER MARCADO O RADIO BUTTON DE SITUAÇÃO
             {
+                indice = -1;//VOLTA A POSIÇÃO DE ESCOLHA PARA -1
                 cbSituacao.Enabled = true;//LIBERA O COMBOBOX DE SITUAÇÃO
                 dtpInicio.Enabled = false;//TRAVA O CAMPO DE DATAS
                 dtpFim.Enabled = false;//TRAVA O CAMPO DE DATAS
@@ -194,5 +204,9 @@ namespace Projeto_eleicao
                 preencheDataGridView(2); //FAZ O PREENCHIMENTO DE DADOS A PARTIR DE INTERVALO DE DATAS
         }
 
+        private void dgvEleicao_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indice = dgvEleicao.CurrentRow.Index;//VARIÁVEL QUE RECEBE O INDICE DA LINHA CLICADA
+        }
     }
 }

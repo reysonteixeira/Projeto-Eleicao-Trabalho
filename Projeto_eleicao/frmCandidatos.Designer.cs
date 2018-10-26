@@ -84,7 +84,7 @@
             this.txtNomeAbreviado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNomeAbreviado.Name = "txtNomeAbreviado";
             this.txtNomeAbreviado.Size = new System.Drawing.Size(184, 26);
-            this.txtNomeAbreviado.TabIndex = 1;
+            this.txtNomeAbreviado.TabIndex = 2;
             this.txtNomeAbreviado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeAbreviado_KeyPress);
             this.txtNomeAbreviado.Validated += new System.EventHandler(this.txtNomeAbreviado_Validated);
             // 
@@ -97,7 +97,7 @@
             this.txtNascimento.Mask = "00/00/0000";
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(88, 26);
-            this.txtNascimento.TabIndex = 2;
+            this.txtNascimento.TabIndex = 3;
             this.txtNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtNascimento.Validated += new System.EventHandler(this.txtNascimento_Validated);
             // 
@@ -147,7 +147,7 @@
             this.groupBox1.Location = new System.Drawing.Point(371, 229);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(293, 113);
-            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Partido";
             // 
@@ -157,7 +157,7 @@
             this.txtPartidoNome.Location = new System.Drawing.Point(90, 66);
             this.txtPartidoNome.Name = "txtPartidoNome";
             this.txtPartidoNome.Size = new System.Drawing.Size(164, 26);
-            this.txtPartidoNome.TabIndex = 3;
+            this.txtPartidoNome.TabIndex = 1;
             this.txtPartidoNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartidoNome_KeyPress);
             this.txtPartidoNome.Validated += new System.EventHandler(this.txtPartidoNome_Validated);
             // 
@@ -167,7 +167,7 @@
             this.txtPartidoNum.Location = new System.Drawing.Point(90, 29);
             this.txtPartidoNum.Name = "txtPartidoNum";
             this.txtPartidoNum.Size = new System.Drawing.Size(60, 26);
-            this.txtPartidoNum.TabIndex = 2;
+            this.txtPartidoNum.TabIndex = 0;
             this.txtPartidoNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartidoNum_KeyPress);
             this.txtPartidoNum.Validated += new System.EventHandler(this.txtPartidoNum_Validated);
             // 
@@ -199,7 +199,7 @@
             this.btnSelecionar.Location = new System.Drawing.Point(256, 317);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(31, 25);
-            this.btnSelecionar.TabIndex = 15;
+            this.btnSelecionar.TabIndex = 4;
             this.btnSelecionar.Text = "...";
             this.btnSelecionar.UseVisualStyleBackColor = true;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
@@ -215,7 +215,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(277, 25);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(122, 38);
-            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -239,7 +239,7 @@
             this.btnSair.Location = new System.Drawing.Point(542, 25);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(122, 38);
-            this.btnSair.TabIndex = 14;
+            this.btnSair.TabIndex = 7;
             this.btnSair.Text = "Sair";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -252,7 +252,7 @@
             this.btnNovo.Location = new System.Drawing.Point(128, 25);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(122, 38);
-            this.btnNovo.TabIndex = 9;
+            this.btnNovo.TabIndex = 0;
             this.btnNovo.Text = "Novo";
             this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

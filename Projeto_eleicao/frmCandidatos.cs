@@ -26,7 +26,6 @@ namespace Projeto_eleicao
             InitializeComponent();
         }
 
-        string foto = " ";
         
         //----- MÉTODO AO MOSTRAR O FORMULÁRIO
         private void frmCandidatos_Shown(object sender, EventArgs e)
@@ -39,6 +38,9 @@ namespace Projeto_eleicao
                 restauraDados();
             }
         }
+
+        //----- VARIÁVEIS
+        string foto = ""; //UTILIZADA EM VALIDAÇÃO DE FOTO
 
 
         //###########################################  MANIPULAÇÃO COM DADOS DO FORMULÁRIO  #############################################
@@ -72,6 +74,7 @@ namespace Projeto_eleicao
             txtPartidoNome.Text = frmGerencial.eleicao.getNomePartido(frmGerencial.eleicao.getIndice());
             txtPartidoNum.Text = frmGerencial.eleicao.getNumPartido(frmGerencial.eleicao.getIndice()).ToString();
             pbFoto.Load(frmGerencial.eleicao.getFoto(frmGerencial.eleicao.getIndice()));
+            foto = frmGerencial.eleicao.getFoto(frmGerencial.eleicao.getIndice());
         }
        
         //----- DESABILITA O BOTÃO NOVO, QUANDO JÁ TIVER SENDO FEITO UM CADASTRO
@@ -100,13 +103,16 @@ namespace Projeto_eleicao
            if (frmGerencial.eleicao.getIndice() == -1)
             {
                 EnviaDados();//TRANSFERE OS DADOS DO FORMULÁRIO PARA A STRUCT
+                foto = string.Empty;
                 //ATRIBUI OS VALORES QUE ESTÃO NA STRUCT CANDIDATOS PARA A LISTA
                 frmGerencial.eleicao.insereCandidato();
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }
             else
-            { 
+            {
+                frmGerencial.eleicao.setFoto(foto);
                 EnviaDados();//TRANSFERE OS DADOS DO FORMULÁRIO PARA A STRUCT
+                foto = string.Empty;
                 frmGerencial.eleicao.insereCandidato(frmGerencial.eleicao.getIndice());//SALVA OS DADOS EM POSIÇÃO SELECIONADA PELO USUÁRIO
                 MessageBox.Show("Cadastro alterado com sucesso!");
             }
@@ -139,7 +145,7 @@ namespace Projeto_eleicao
                 btnSelecionar.Enabled = false;
                 LiberaCampos(false);
                 pbFoto.Image = pbFoto.InitialImage;//O CAMPO DO FORMULÁRIO RECEBE A IMAGEM INICIAL
-                foto = " ";
+                foto = "";
                 LimpaCampos();
                 if (frmGerencial.eleicao.getIndice() >= 0)//SE O CADASTRO FOR UMA ALTERAÇÃO
                 {
@@ -154,7 +160,7 @@ namespace Projeto_eleicao
         {
             //--- ABRE A CAIXA DE DIALOGO EM BUSCA DO DIRETORIO CONTENDO IMAGEM
             openFileDialog1.ShowDialog();
-            if(openFileDialog1.FileName != null)//--- VALIDA SE O USUÁRIO SELECIONOU ALGUMA IMAGEM
+            if(!string.IsNullOrEmpty(openFileDialog1.FileName.ToString()))//--- VALIDA SE O USUÁRIO SELECIONOU ALGUMA IMAGEM
             {
                 //--- ATRIBUI A IMAGEM SELECIONADA AO CAMPO PICBOX
                 pbFoto.Load(openFileDialog1.FileName);
@@ -169,7 +175,10 @@ namespace Projeto_eleicao
             this.Close();//FECHA A JANELA
         }
 
-        // ----- VERIFICA SE A TEXTBOX NOME COMPLETO NÃO ESTÁ VAZIA
+
+        //######################################################   VALIDAÇÕES    ########################################################
+        
+        //----- VERIFICA SE A TEXTBOX NOME COMPLETO NÃO ESTÁ VAZIA
         private void txtNomeCompleto_Validated(object sender, EventArgs e)
         {
             if (txtNomeCompleto.Text.Trim() == "")
@@ -182,7 +191,7 @@ namespace Projeto_eleicao
             }
         }
 
-        // ----- VERIFICA SE A TEXTBOX NOME ABREVIADO NÃO ESTÁ VAZIA
+        //----- VERIFICA SE A TEXTBOX NOME ABREVIADO NÃO ESTÁ VAZIA
         private void txtNomeAbreviado_Validated(object sender, EventArgs e)
         {
             if (txtNomeAbreviado.Text.Trim() == "")
@@ -208,7 +217,7 @@ namespace Projeto_eleicao
             }
         }
 
-        // ----- VERIFICA SE A TEXTBOX NÚMERO DO PARTIDO NÃO ESTÁ VAZIA
+        //----- VERIFICA SE A TEXTBOX NÚMERO DO PARTIDO NÃO ESTÁ VAZIA
         private void txtPartidoNum_Validated(object sender, EventArgs e)
         {
             if (txtPartidoNum.Text.Trim() == "")
@@ -221,7 +230,7 @@ namespace Projeto_eleicao
             }
         }
 
-        // ----- VERIFICA SE A TEXTBOX NOME DO PARTIDO NÃO ESTÁ VAZIA
+        //----- VERIFICA SE A TEXTBOX NOME DO PARTIDO NÃO ESTÁ VAZIA
         private void txtPartidoNome_Validated(object sender, EventArgs e)
         {
             if (txtPartidoNome.Text.Trim() == "")
@@ -234,31 +243,35 @@ namespace Projeto_eleicao
             }
         }
 
+        //----- NÃO DEIXA USUÁRIO DIGITAR TEXTO EM CAMPO DE NUMERICO - NÚMERO DO PARTIDO
         private void txtPartidoNum_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))//VERIFICA SE O CARACTER DIGITADO ESTÁ DENTRO DOS PERMITIDOS
             {
                 e.Handled = true;
 
             }
         }
 
+        //----- NÃO DEIXA USUÁRIO DIGITAR NÚMERO EM CAMPO DE TEXTO - NOME COMPLETO
         private void txtNomeCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))
+            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))//VERIFICA SE O CARACTER DIGITADO ESTÁ DENTRO DOS PERMITIDOS
             {
                 e.Handled = true;
             }
         }
 
+        //----- NÃO DEIXA USUÁRIO DIGITAR NÚMERO EM CAMPO DE TEXTO - NOME ABREVIADO
         private void txtNomeAbreviado_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))
+            if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == 32))//VERIFICA SE O CARACTER DIGITADO ESTÁ DENTRO DOS PERMITIDOS
             {
                 e.Handled = true;
             }
         }
 
+        //----- NÃO DEIXA USUÁRIO DIGITAR NÚMERO EM CAMPO DE TEXTO - NOME DO PARTIDO
         private void txtPartidoNome_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar)))

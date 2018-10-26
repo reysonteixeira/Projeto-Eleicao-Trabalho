@@ -90,13 +90,13 @@ namespace Projeto_eleicao
                             frmCodigoSegurancacs codigoSeguranca = new frmCodigoSegurancacs();
                             codigoSeguranca.ShowDialog();
                             cbEleicao.Items.Clear();//LIMPA OS VALORES DO COMBOBOX
+                            rbIniciar.Checked = false;//RETORNA OS VALORES PARA A COMBOBOX
                             rbIniciar.Checked = true;//RETORNA OS VALORES PARA A COMBOBOX
-
                         }
                         else
                         {
                             TimeSpan dias = (frmGerencial.eleicao.getDataEleicao(i).Date - DateTime.Now.Date);//RECEBE A QUANTIDADE DE DIAS ATÉ O INICIO
-                            MessageBox.Show("impossível iniciar eleição! Restam: " + dias.Days + " dias para poder iniciar!");
+                            MessageBox.Show("Impossível iniciar eleição! Restam: " + dias.Days + " dias para poder iniciar!");
                         }
                     }
                 }

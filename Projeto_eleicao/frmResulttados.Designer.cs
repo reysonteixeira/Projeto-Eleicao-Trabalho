@@ -55,7 +55,7 @@
             this.lblVotosValidos = new System.Windows.Forms.Label();
             this.lblBrancos = new System.Windows.Forms.Label();
             this.lblNulos = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.pb1Turno = new System.Windows.Forms.PictureBox();
             this.pb2Turno2 = new System.Windows.Forms.PictureBox();
             this.pb2Turno1 = new System.Windows.Forms.PictureBox();
@@ -320,17 +320,18 @@
             this.lblNulos.TabIndex = 35;
             this.lblNulos.Text = "label15";
             // 
-            // button1
+            // btnFechar
             // 
-            this.button1.Image = global::Projeto_eleicao.Properties.Resources.door21;
-            this.button1.Location = new System.Drawing.Point(1110, 663);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 40);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Fechar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFechar.Image = global::Projeto_eleicao.Properties.Resources.door21;
+            this.btnFechar.Location = new System.Drawing.Point(1110, 663);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(115, 40);
+            this.btnFechar.TabIndex = 36;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFechar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // pb1Turno
             // 
@@ -386,7 +387,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 729);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.lblNulos);
             this.Controls.Add(this.lblBrancos);
             this.Controls.Add(this.lblVotosValidos);
@@ -467,6 +468,6 @@
         private System.Windows.Forms.Label lblVotosValidos;
         private System.Windows.Forms.Label lblBrancos;
         private System.Windows.Forms.Label lblNulos;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFechar;
     }
 }
