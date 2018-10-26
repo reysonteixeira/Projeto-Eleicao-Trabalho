@@ -35,7 +35,8 @@ namespace Projeto_eleicao
 
         private void btnDocumentação_Click(object sender, EventArgs e)
         {
-            
+            ViwerPDF ViwerPDF = new ViwerPDF();
+            ViwerPDF.ShowDialog();
         }
 
         private void btnIniciar_Click(object sender, EventArgs e)
