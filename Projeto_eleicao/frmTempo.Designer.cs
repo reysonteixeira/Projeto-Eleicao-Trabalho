@@ -119,6 +119,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTempo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aguarde para votar";
             this.Load += new System.EventHandler(this.frmTempo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTempo_KeyDown);

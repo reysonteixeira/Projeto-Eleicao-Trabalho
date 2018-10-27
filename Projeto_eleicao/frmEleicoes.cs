@@ -248,6 +248,7 @@ namespace Projeto_eleicao
             {
                 //-- REMOVE O ELEMENTO CORRESPONDENTE A ESCOLHA EM COMBOBOX
                 frmGerencial.eleicao.removeCandidatoLista(cbCandidatos.SelectedIndex);
+                MessageBox.Show("Candidato excluído com sucesso!");
                 //-- ATUALIZA A COMBOBOX DE CANDIDATOS APÓS A EXCLUSÃO DO CANDIDATO
                 preencheComboBox();
             }
